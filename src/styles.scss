@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*
+            ╔══╗ 
+            ╚╗╔╝
+            ╔╝╚(¯`v´¯)Coding 
+            ╚══ `.¸.´   THIS WEBSITE MADE BY LOVE ( ͡° ͜ʖ ͡°)
+*/
+
+//WebSite Sass Files Import
+
+//global fonts
+@import '../src/scss/global/fonts';
+//Var
+@import '../src/scss/helpers/var';
+//Animations
+@import '../src/scss/helpers/animation';
+//RESPONSIVE
+@import '../src/scss/helpers/responsive';
+//RESET
+@import '../src/scss/helpers/reset';

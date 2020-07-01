@@ -25,7 +25,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -121,8 +126,36 @@
               "devServerTarget": "flexnet:serve:production"
             }
           }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "flexnet:ionic-cordova-build",
+            "devServerTarget": "flexnet:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "flexnet:ionic-cordova-build:production",
+              "devServerTarget": "flexnet:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "flexnet:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "flexnet:build:production"
+            }
+          }
         }
       }
-    }},
-  "defaultProject": "flexnet"
+    }
+  },
+  "defaultProject": "flexnet",
+  "cli": {
+    "analytics": "e3aec585-ad39-4306-afed-7469d7fee37a"
+  }
 }
