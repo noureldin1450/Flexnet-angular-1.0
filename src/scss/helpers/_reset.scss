@@ -1,31 +1,37 @@
-
-/*
-Website Reset And Fix
-*/
-*{
+//Website Reset And Fix
+* {
     padding: 0;
     margin: 0;
     line-height: 1.5em;
 }
-html,body{
+html,
+body {
     padding: 0;
     margin: 0;
     font-size: 1rem;
     font-family: $mainfont;
-    background: $white-color;
+    background: #eee;
     color: $black-color;
-    scroll-behavior: smooth;
 }
-ul,li{
+ul,
+li {
     list-style: none;
 }
 //Adding colors
-h1,h2,h3,h4,p,a{
-    color: $black-color;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: $white-color;
+    font-family: $mainfont;
 }
-a{
+a {
     text-decoration: none;
 }
-img{
-    width: 100%;   
+img {
+    width: 100%;
 }
