@@ -1,3 +1,6 @@
+
+
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
-
-  public name:string = 'NourEldin';
-
+  
   constructor() { }
+  ngOnInit(): void {}
+  
+  msg:string = 'Hello world';
 
-  ngOnInit(): void {
+  href:string = 'https://flexnet.ga';
+
+  click(name){
+    alert(`hello ${name}`)
+  }
+
+
+  name:string = 'NourELdin';
+
+  readName(): void{
+    if(this.name != ''){
+      alert(`Nice to meet you ${this.name}`)
+    }else{
+      alert('add your name please');
+    }
   }
 
 }
+

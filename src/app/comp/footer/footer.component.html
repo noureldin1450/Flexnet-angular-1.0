@@ -1,6 +1,6 @@
 <footer class="footer">
 
-    <!-- {{ partial "header/nav.html" . }} -->
+    <app-nav></app-nav>
 
     <div class="container">
         <ul class="footer__content">
@@ -40,7 +40,8 @@
                 <span class="button">
                     <button>
                         <a href="https://www.buymeacoffee.com/yuvNMQfC7">
-                            <img class="ion-icon" src="/assets/icons/heart.svg" />
+                            
+                            <div [ngClass]="'ion-icon'" [innerHTML]='iconName | icon'></div>
                             Support US
                         </a>
                     </button>

@@ -1,4 +1,44 @@
 
 
+<style>
+    h1,span,h3{
+        color: black;
+    }
+    .private{
+        opacity: .7;
+    }
+</style>
 
 <h1> Content Goes Here </h1>
+
+
+<input [(ngModel)]="name">
+
+<br>
+<br>
+
+<h1 *ngIf='name'>Hi {{ name |json }}</h1>
+
+<br>
+<br>
+{{ name }}
+
+<br>
+<br>
+
+<button (click)='readName()'> Read Name </button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

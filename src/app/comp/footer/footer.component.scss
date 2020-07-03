@@ -1,4 +1,4 @@
-@import '../../../styles';
+@import "../../../styles";
 
 /* footer code */
 .footer {
@@ -7,7 +7,7 @@
     padding: 2rem 0px;
     margin-top: 2rem;
 
-    @include tap{
+    @include tap {
         text-align: center;
     }
 
@@ -95,8 +95,10 @@
 
                     .ion-icon {
                         fill: $main-color;
-                        width: 22px;
-                        margin-right: 0.5rem;
+                        margin-right: 0.5rem !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
                 }
             }
@@ -109,11 +111,11 @@
     footer {
         nav {
             .ham,
-            .navigation{
+            .navigation {
                 display: none;
             }
             text-align: center;
-            .logo{
+            .logo {
                 display: inline-block;
                 float: none;
             }
