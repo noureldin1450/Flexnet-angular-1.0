@@ -2,6 +2,16 @@
     GLOBAL STYLES
 */
 
+.hide{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+.clear{
+    clear: both !important;
+}
+
 .container {
     width: 90% !important;
     margin: auto;
@@ -83,8 +93,14 @@
 
 //the default of all icons color
 .ion-icon {
-    fill: $white-color;
-    width: 20px !important;
+    width: 25px !important;
+
+    img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 //adding some speaces for the card shadow

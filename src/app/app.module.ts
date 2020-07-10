@@ -3,33 +3,38 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+//main modules
+import { HomepageModule } from './Homepage/Homepage.module';
+import { SinglepageModule } from './Singlepage/Singlepage.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './views/home/home.component';
-import { NavComponent } from './comp/nav/nav.component';
-import { FooterComponent } from './comp/footer/footer.component';
-import { IconPipe } from './icon.pipe';
-import { MovieComponent } from './views/movie/movie.component';
-import { PagenotfoundComponent } from './views/pagenotfound/pagenotfound.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
+
+
+//api
+import { ApiService } from './services/api.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     NavComponent,
     FooterComponent,
-    IconPipe,
-    MovieComponent,
     PagenotfoundComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HomepageModule,
+    SinglepageModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
