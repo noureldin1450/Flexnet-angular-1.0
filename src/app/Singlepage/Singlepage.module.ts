@@ -10,6 +10,7 @@ import { TruncatePipe } from '../services/truncate.pipe';
 //api
 import { ApiService } from '../services/api.service';
 import { HeaderComponent } from './header/header.component';
+import { MovieInfoComponent } from './movie-info/movie-info.component';
 
 
 
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent,
     TrailerPipe, 
     IconPipe,
-    TruncatePipe
+    TruncatePipe,
+    MovieInfoComponent
   ],
   exports:[
     SinglepageComponent,
