@@ -12,6 +12,9 @@
                 <ng-template [ngIf]="MovieData.server1">
                     <li [class.active]="server === 1" (click)="server = 1">Server 1</li>
                 </ng-template>
+                <ng-template [ngIf]="!MovieData.server1">
+                    <li [class.active]="server === 1" (click)="server = 1">Server 1</li>
+                </ng-template>
                 <ng-template [ngIf]="MovieData.server2">
                     <li [class.active]="server === 2" (click)="server = 2">Server 2</li>
                 </ng-template>
@@ -28,12 +31,17 @@
             <ng-template #nootherservers>
             </ng-template>
         </div>
+
         <div id="movie-player">
             <ng-template [ngIf]="( MovieData.server1 && server === 1)">
                 <span [innerHTML]="MovieData.server1 | moviePlayer"></span>
             </ng-template>
+            
             <ng-template [ngIf]="( !MovieData.server1 && server === 1)">
-               <span [innerHTML]="MovieData.imdbid | moviePlayer:'imdb'"></span>
+                <ng-template [ngIf]="MovieData.server2">
+                    <span [innerHTML]="MovieData.server2 | moviePlayer"></span>
+                </ng-template>
+                <span *ngIf="!MovieData.server2" [innerHTML]="MovieData.imdbid | moviePlayer:'imdb'"></span>
             </ng-template>
             
             <span *ngIf="server === 2" [innerHTML]="MovieData.server2 | moviePlayer"></span>
@@ -45,59 +53,5 @@
             <span *ngIf="server === 5" [innerHTML]="MovieData.server5 | moviePlayer"></span>
         </div>
        
-        <!-- {{ if .Params.server1 }} -->
-        <div x-data="{ server: 1 }">
-            <div class="servers">
-                <ul>
-                    <!-- {{ if .Params.server1 }} -->
-                    <!-- <li :class="{ 'active': server == 1  }" @click="server = 1">Server 1</li> -->
-                    <!-- {{else}} -->
-                    <!-- <li :class="{ 'active': server == 1  }" @click="server = 1">Server 1</li> -->
-                    <!-- {{end}} -->
-                    <!-- {{ if .Params.server2 }} -->
-                    <!-- <li :class="{ 'active': server == 2  }" @click="server = 2">Server 2</li> -->
-                    <!-- {{end}} -->
-                    <!-- {{ if .Params.server3 }} -->
-                    <!-- <li :class="{ 'active': server == 3  }" @click="server = 3">Server 3</li> -->
-                    <!-- {{end}} -->
-                    <!-- {{ if .Params.server4 }} -->
-                    <!-- <li :class="{ 'active': server == 4  }" @click="server = 4">Server 4</li> -->
-                    <!-- {{end}} -->
-                    <!-- {{ if .Params.server5 }} -->
-                    <!-- <li :class="{ 'active': server == 5  }" @click="server = 5">Server 5</li> -->
-                    <!-- {{end}} -->
-                </ul>
-            </div>
-            
-            <!--site i freams-->
-            <div id="movie-player">
-                <!-- {{ if .Params.server1 }}
-                {{ partial "movie/ifram-code.html" (dict "src" .Params.server1 "Server" "server == 1"  ) }}
-                {{else}}
-                <iframe class=" animated fadeIn" x-show="server == 1 " width="560" height="500"
-                    src="https://1movietv.com/playstream/{{ .Params.imdbid }}" frameborder=”0″ scrolling=”no”
-                    allowfullscreen=”allowfullscreen”
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                {{end}}
-
-                {{ if .Params.server2 }}
-                {{ partial "movie/ifram-code.html" (dict "src" .Params.server2 "Server" "server == 2"  ) }}
-                {{end}}
-
-                {{ if .Params.server3 }}
-                {{ partial "movie/ifram-code.html" (dict "src" .Params.server3 "Server" "server == 3"  ) }}
-                {{end}}
-
-                {{ if .Params.server4 }}
-                {{ partial "movie/ifram-code.html" (dict "src" .Params.server4 "Server" "server == 4"  ) }}
-                {{end}}
-
-                {{ if .Params.server5 }}
-                {{ partial "movie/ifram-code.html" (dict "src" .Params.server5 "Server" "server == 5"  ) }}
-                {{end}} -->
-
-            </div>
-            </div>
-            </div>
+    </div>
 </section>

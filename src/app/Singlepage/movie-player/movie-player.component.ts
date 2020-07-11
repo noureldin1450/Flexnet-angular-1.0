@@ -4,15 +4,17 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   selector: 'app-movie-player',
   templateUrl: './movie-player.component.html',
   styleUrls: ['./movie-player.component.scss'],
-  encapsulation: ViewEncapsulation.None 
+  encapsulation: ViewEncapsulation.None
 })
 export class MoviePlayerComponent implements OnInit {
 
-  @Input() MovieData:any;
+  @Input() MovieData: any;
 
-  server:number = 1;
+  server: number = 1;
+  
+  constructor() { }
 
-  constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
 }
