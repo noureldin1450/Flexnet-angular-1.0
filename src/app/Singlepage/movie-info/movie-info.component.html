@@ -1,1 +1,44 @@
-<p>movie-info works!</p>
+<section class="more-info" id="more-info">
+    <div class="container">
+        <div class="movie-cover">
+            <img class="img" [src]="MovieData.moviecover">
+        </div>
+
+        <div class="movie-info">
+            <div class="content">
+                <h1>
+                    {{ MovieData.title }}
+                    <!-- the year should be a link to a year page -->
+                    <!-- <a href="{{.Site.BaseURL}}years/{{.Params.year}}">{{.Params.year}}</a> -->
+                    <a>{{ MovieData.year }}</a>
+                </h1>
+
+                <div class="duration">
+                    <span>{{ MovieData.duration }}</span>
+                </div>
+
+                <div class="rating">
+                    <span>{{ MovieData.rating }}</span><span class="rating-num">/10</span>
+                </div>
+
+                <div class="tags">
+                    <a *ngFor="let tag of MovieData.tags" href="/tags/{{ tag }}" title="{{ tag }} Movies">{{ tag }}</a>
+                </div>
+
+                <div class="stars">
+                    <span class="stars__headline">Stars: </span>
+                    <a *ngFor="let star of MovieData.stars" title="{{ star }} Movies">{{ star }}<span>, </span></a>
+                </div>
+
+                <div class="story">
+                    <p>
+                        {{ MovieData.story }}
+                    </p>
+                    <a href="https://www.imdb.com/title/{{ MovieData.imdbid }}" title="IMDB" class="imdb"
+                        target="_blank">IMDB</a>
+                </div>
+
+            </div>
+        </div>`
+    </div>
+</section>

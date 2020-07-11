@@ -1,46 +1,12 @@
-
-<div *ngIf="MovieData.moviebg; else nobackground" class="movie-header" style="background-image: url({{MovieData.moviebg}});">
+<section>
+    <div *ngIf="MovieData.moviebg; else nobackground" class="movie-header" style="background-image: url({{MovieData.moviebg}});">
     
-    <div class="overlay">
-
-        <div class="content container">
-
-            <div class="trailer" [innerHtml]='MovieData.trailer | trailer'></div>
-
-            <div class="info">
-                <h1 class="info__title">
-                    {{ MovieData.title }}
-                </h1>
-                <h2 class="info__duration">{{MovieData.duration}}</h2>
-                <h2 class="info__rating">{{MovieData.rating}}/10</h2>
-                <div class="btns">
-                    <a title="Watch Now">
-                        Watch now
-                        <img class="ion-icon" src="/assets/icons/play.svg" />
-                    </a>
-                    <a title="More info">
-                        more info
-                        <img class="ion-icon" src="/assets/icons/information-circle.svg" />
-                    </a>
-                </div>
-                <div style="clear: both;"></div>
-                <p class="info__story">
-                    {{ MovieData.story | truncate:[198] }}
-                </p>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<ng-template #nobackground>
-    <div class="movie-header" style="background-image: url(/assets/images/background.jpg);">
         <div class="overlay">
-
+    
             <div class="content container">
-                
+    
                 <div class="trailer" [innerHtml]='MovieData.trailer | trailer'></div>
-
+    
                 <div class="info">
                     <h1 class="info__title">
                         {{ MovieData.title }}
@@ -63,7 +29,42 @@
                     </p>
                 </div>
             </div>
-
+    
         </div>
     </div>
-</ng-template>
+    
+    <ng-template #nobackground>
+        <div class="movie-header" style="background-image: url(/assets/images/background.jpg);">
+            <div class="overlay">
+    
+                <div class="content container">
+                    
+                    <div class="trailer" [innerHtml]='MovieData.trailer | trailer'></div>
+    
+                    <div class="info">
+                        <h1 class="info__title">
+                            {{ MovieData.title }}
+                        </h1>
+                        <h2 class="info__duration">{{MovieData.duration}}</h2>
+                        <h2 class="info__rating">{{MovieData.rating}}/10</h2>
+                        <div class="btns">
+                            <a title="Watch Now">
+                                Watch now
+                                <img class="ion-icon" src="/assets/icons/play.svg" />
+                            </a>
+                            <a title="More info">
+                                more info
+                                <img class="ion-icon" src="/assets/icons/information-circle.svg" />
+                            </a>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <p class="info__story">
+                            {{ MovieData.story | truncate:[198] }}
+                        </p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </ng-template>
+</section>
