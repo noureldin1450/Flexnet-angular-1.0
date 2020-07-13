@@ -1,0 +1,9 @@
+<div class="container" style="overflow-x: scroll; overflow-y: hidden;">
+    <ul class="keywords">
+        <!-- Main tags -->
+        <li *ngFor="let tag of tags.tags"><a [routerLink]="tag.link"
+                title="Flexnet {{ tag.name }} Movies">{{ tag.name }} Movies</a></li>
+        <!-- SEO tags -->
+        <li *ngFor="let tag of tags.seo"><a [routerLink]="tag.link" title="{{ tag.name }}">{{ tag.name }}</a></li>
+    </ul>
+</div>
