@@ -86,8 +86,8 @@ header {
                 padding: 0.4rem 1.5rem;
               }
             }
-            ion-icon {
-              font-size: 1.5rem;
+            .ion-icon {
+              width: 40px;
               margin-left: 0.6rem;
             }
           }
@@ -124,8 +124,8 @@ header {
           .play-btn {
             text-align: center;
             padding-bottom: 1rem;
-            ion-icon {
-              font-size: 3.5rem;
+            .ion-icon {
+              width: 60px !important;
             }
           }
 
@@ -143,8 +143,9 @@ header {
               ul {
                 .star {
                   color: #ffc93c;
-                  ion-icon {
-                    color: #ffc93c;
+                  .ion-icon {
+                    width: 21px !important;
+                    margin-right: .4rem;
                   }
                 }
                 li {
@@ -156,8 +157,8 @@ header {
                   flex-direction: row;
                   float: left;
 
-                  ion-icon {
-                    font-size: 1.3rem;
+                  .ion-icon {
+                    width: 20px !important;
                     margin-right: 0.5rem;
                   }
                   span {

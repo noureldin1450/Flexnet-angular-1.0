@@ -5,14 +5,14 @@ import { FormsModule } from '@angular/forms';
 
 import { TrailerPipe } from '../trailer.pipe';
 import { IconPipe } from '../icon.pipe';
-import { TruncatePipe } from '../services/truncate.pipe';
 import { MoviePlayerPipe } from '../services/movie-player.pipe';
+import { PipesModule } from '../shared/pipes/pipes.module';
 //api
 import { ApiService } from '../services/api.service';
-import { HeaderComponent } from './header/header.component';
 
 
 //comp
+import { HeaderComponent } from './header/header.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { MoviePlayerComponent } from './movie-player/movie-player.component';
 
@@ -21,14 +21,14 @@ import { MoviePlayerComponent } from './movie-player/movie-player.component';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    PipesModule
   ],
   declarations: [
     SinglepageComponent,
     HeaderComponent,
     TrailerPipe, 
     IconPipe,
-    TruncatePipe,
     MovieInfoComponent,
     MoviePlayerComponent,
     MoviePlayerPipe

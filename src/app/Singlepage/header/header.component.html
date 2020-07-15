@@ -9,7 +9,7 @@
     
                 <div class="info">
                     <h1 class="info__title">
-                        {{ MovieData.title }}
+                        {{ MovieData.title | truncate:[29] }}
                     </h1>
                     <h2 class="info__duration">{{MovieData.duration}}</h2>
                     <h2 class="info__rating">{{MovieData.rating}}/10</h2>

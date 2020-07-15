@@ -23,9 +23,8 @@ import { ApiService } from './services/api.service';
     AppComponent,
     NavComponent,
     FooterComponent,
-    PagenotfoundComponent,
+    PagenotfoundComponent
   ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,

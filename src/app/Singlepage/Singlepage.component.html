@@ -1,14 +1,20 @@
-
 <style>
-    *{
+    * {
         color: black;
     }
 </style>
 
-<app-header [MovieData]='MovieData'></app-header>
+
+<app-header *ngIf="MovieData ; else loading" [MovieData]='MovieData'></app-header>
 
 <app-movie-info [MovieData]='MovieData'></app-movie-info>
 
 <app-movie-player [MovieData]='MovieData'></app-movie-player>
 
 <div class="sharethis-inline-reaction-buttons"></div>
+
+<ng-template #loading>
+    <div class="loading">
+        <h1> LOADING...... </h1>
+    </div>
+</ng-template>

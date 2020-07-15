@@ -19,5 +19,13 @@ export class ApiService {
     return this.http.get(`${this.HEADERS}${this.APIURL}tags.json`);
   }
 
+  MoviesData(){
+    return this.http.get(`${this.HEADERS}${this.APIURL}movies.json`);
+  }
+  
+  SlugsData(){
+    return this.http.get(`${this.HEADERS}${this.APIURL}slugs.json`);
+  }
+
 
 }

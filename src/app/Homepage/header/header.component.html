@@ -1,1 +1,68 @@
-<p>header works!</p>
+<header>
+    <div class="container">
+
+        <div class="content">
+            <div class="live-stream">
+                <h1 class="main-title">FlexNet New Movies</h1>
+
+                <ul>
+
+                    <li *ngFor="let movie of moviesData.movies.slice(0,2);">
+                        <div class="player" style="
+                            background-image: url({{movie.moviebg}});
+                            background-position: center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                        ">
+                            <div class="player__overlay">
+                                <div class="container">
+
+                                    <a title="Watch {{ movie.title }} on flexnet now" [routerLink]="movie.slug">
+                                        <div class="play-btn">
+                                            <img class="ion-icon" src="/assets/icons/play-white.svg" />
+                                        </div>
+                                    </a>
+
+                                    <div class="info">
+                                        <h1>{{ movie.title | truncate:[29] }}</h1>
+
+                                        <div class="more-info">
+                                            <ul>
+                                                <li class="star">
+                                                    <!-- <ion-icon class="animated rotat" name="star"></ion-icon> -->
+                                                    <img class="ion-icon animated rotat" src="/assets/icons/star-gold.svg" />
+                                                    <span>{{ movie.rating }}</span>
+                                                </li>
+                                                <li>
+                                                    <!-- <ion-icon name="time"></ion-icon> -->
+                                                    <img class="ion-icon" src="/assets/icons/time.svg" />
+                                                    <span>{{ movie.duration }}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn">
+                            <a [routerLink]="movie.slug" title="Watch {{ movie.title }} Movie Now">Watch It Now
+                            <img class="ion-icon" src="../../../assets/icons/videocam-white.svg">                                
+                                 <!-- <ion-icon name="videocam"></ion-icon> -->
+                            </a>
+                        </div>
+
+                    </li>
+
+
+                </ul>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</header>

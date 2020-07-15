@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-Homepage',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  moviesData:any;
+
+  constructor(private api:ApiService) { 
+    api.MoviesData()
+      .subscribe(data =>{
+        this.moviesData = data;
+      })
+  }
 
   ngOnInit() {
   }
