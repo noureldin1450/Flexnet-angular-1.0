@@ -1,0 +1,19 @@
+<!--Search-->
+<div *ngIf="slugs; else loading" class="search animated fadeIn">
+
+    <input [(ngModel)]="moviename" list="movies-names" id="moviename" name="search" type="text" placeholder="Movie Name" onkeydown="keyCode(event)" required>
+    
+    <button (click)="search()">
+        <img class="ion-icon" src="../../../assets/icons/search-white.svg">
+        <!-- <ion-icon name="search"></ion-icon> -->
+    </button>
+
+    <datalist id="movies-names">
+        <option *ngFor="let slug of slugs.slugs" value="{{slug}}">
+    </datalist>
+    
+</div>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

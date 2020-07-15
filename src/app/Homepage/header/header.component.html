@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="moviesData; else loading">
     <div class="container">
 
         <div class="content">
@@ -66,3 +66,8 @@
 
     </div>
 </header>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>
+

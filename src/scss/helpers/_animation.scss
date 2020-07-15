@@ -64,3 +64,23 @@
     animation-fill-mode: both;
     animation-timing-function: linear;
   }
+
+@keyframes loading {
+    0% {
+        font-size: 1rem;
+      }
+     50% {
+        font-size: 1.4rem;
+      }
+     100% {
+        font-size: 1rem;
+      }
+}
+
+.loading {
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+  }
