@@ -29,9 +29,12 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/global.scss"
+              "src/global.scss",
+              "./node_modules/plyr/dist/plyr.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/plyr/dist/plyr.min.js"
+            ]
           },
           "configurations": {
             "production": {

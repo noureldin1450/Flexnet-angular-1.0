@@ -7,6 +7,8 @@ import { TrailerPipe } from '../trailer.pipe';
 import { IconPipe } from '../icon.pipe';
 import { MoviePlayerPipe } from '../services/movie-player.pipe';
 import { PipesModule } from '../shared/pipes/pipes.module';
+import { PlyrModule } from 'ngx-plyr';
+
 //api
 import { ApiService } from '../services/api.service';
 
@@ -22,7 +24,8 @@ import { MoviePlayerComponent } from './movie-player/movie-player.component';
   imports: [
     CommonModule,
     FormsModule,
-    PipesModule
+    PipesModule,
+    PlyrModule
   ],
   declarations: [
     SinglepageComponent,
