@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, SimpleChange, OnChanges, SimpleChanges } from '@angular/core';
+import { Component,Input, ViewEncapsulation, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-movie-player',
@@ -16,43 +16,9 @@ export class MoviePlayerComponent implements OnChanges {
 
   videoSources: Plyr.Source[] = [];
 
-  // {
-  //   src:'https://storage.googleapis.com/neon-reporter-274200.appspot.com/fushaar/media/30161/30161-240p.mp4',
-  //   type:'video/mp4',
-  //   size: 240
-  // },
-  // {
-  //   src:'https://storage.googleapis.com/neon-reporter-274200.appspot.com/fushaar/media/30161/30161-480p.mp4',
-  //   type:'video/mp4',
-  //   size: 480
-  // }
+  constructor() {}
 
-
-
-  constructor() {
-    //     if(!this.MovieData){
-    //   console.log('no data');
-    // }
-    // if(typeof this.MovieData !== 'undefined'){
-    //   console.log('here data');
-    //   console.log(this.MovieData.title);
-    // }
-  }
-
-  ngOnInit(): void {
-
-    setTimeout(() => {
-      this.videoSources.push(
-        // {
-        //   src:'https://storage.googleapis.com/neon-reporter-274200.appspot.com/fushaar/media/30161/30161-480p.mp4',
-        //   type:'video/mp4',
-        //   size: 480
-        // }
-      )
-      // this.player = true
-    }, 3000);
-
-  }
+  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes);

@@ -13,7 +13,7 @@
 }
 
 .container {
-    width: 90% !important;
+    width: 93% !important;
     margin: auto;
 }
 
@@ -104,12 +104,11 @@
 }
 
 //adding some speaces for the card shadow
-.swiper-wrapper {
-    padding: 2rem 0px;
+.swiper-button-prev{
+    display: none !important;
 }
-.swiper-container {
-    margin-bottom: 2rem;
-    clear: both;
+.swiper-button-next{
+    display: none !important;
 }
 .alltags {
     li {

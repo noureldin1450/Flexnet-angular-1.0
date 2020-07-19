@@ -14,6 +14,7 @@ export class HomepageComponent implements OnInit {
     api.MoviesData()
       .subscribe(data =>{
         this.moviesData = data;
+        console.log(this.moviesData)
       })
   }
 
