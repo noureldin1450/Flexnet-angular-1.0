@@ -1,5 +1,13 @@
+.swiper{
+   margin: 0px 0px 3rem 0px; 
+}
+
 .slider_card {
     width: 100%;
+    
+    &:first-of-type{
+        margin-left: 40px;
+    }
 
     .bg {
         width: 100%;

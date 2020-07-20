@@ -1,27 +1,45 @@
 <div class="container">
+    <h2 class="main-title">
+        <span class="main-title__text">
+            {{ title | titlecase }}
+            <img class="ion-icon" src="/assets/icons/{{ icon }}.svg">
+        </span>
+        <!-- {{ if .Route }} -->
+        <!-- <a href="{{.Site.BaseURL}}{{.Route}}">
+                View More
+                <ion-icon name="play-forward" class="more"></ion-icon>
+            </a> -->
+        <!-- {{end}} -->
+    </h2>
+</div>
+
+<div class="swiper">
     <swiper [config]="config">
-        <li class="slider_card" *ngFor="let movie of moviesData.movies.slice(0,10)">
-            <div class="bg" style="background-image: url({{movie.moviebg}});background-position: center;background-size: cover; background-repeat: no-repeat;">
+        <li class="slider_card" *ngFor="let movie of moviesData.slice(0,10)">
+            <a [routerLink]="movie.slug">
+                <div class="bg"
+                    style="background-image: url({{movie.moviebg}});background-position: center;background-size: cover; background-repeat: no-repeat;">
 
-                <div class="info">
-                    <div class="container">
-                        <h2 class="movie_name">{{ movie.title | truncate:[25] }}</h2>
+                    <div class="info">
+                        <div class="container">
+                            <h2 class="movie_name">{{ movie.title | truncate:[25] }}</h2>
 
-                        <div class="more_info">
-                            <span>
-                                <img class="ion-icon" src="/assets/icons/time.svg">
-                                {{ movie.duration }}
-                            </span>
-                            <span>
-                                <img class="ion-icon" src="/assets/icons/star-white.svg">
-                                {{ movie.rating }}
-                            </span>
-                            
+                            <div class="more_info">
+                                <span>
+                                    <img class="ion-icon" src="/assets/icons/time.svg">
+                                    {{ movie.duration }}
+                                </span>
+                                <span>
+                                    <img class="ion-icon" src="/assets/icons/star-white.svg">
+                                    {{ movie.rating }}
+                                </span>
+
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
+            </a>
         </li>
     </swiper>
 </div>

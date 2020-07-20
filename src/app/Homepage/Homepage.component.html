@@ -1,6 +1,7 @@
 
 <app-tags></app-tags>
-<app-header [moviesData]="moviesData"></app-header>
+<app-header [moviesData]="latestmovies"></app-header>
 <app-search></app-search>
 
-<app-slider [moviesData]="moviesData"></app-slider>
+<app-slider [title]="'FlexNet Latest Movies'" [icon]="'film-red'" [moviesData]="latestmovies"></app-slider>
+<app-slider [title]="'FlexNet Top Movies'" [icon]="'star-red'" [moviesData]="topmovies"></app-slider>

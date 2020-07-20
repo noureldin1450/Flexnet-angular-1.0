@@ -11,6 +11,8 @@ export class SliderComponent implements OnInit {
 
 
   @Input() moviesData:any;
+  @Input() title:string;
+  @Input() icon:string;
 
 
 
@@ -27,19 +29,19 @@ export class SliderComponent implements OnInit {
     freeMode: true,
     lazy: true,
     loadPrevNextAmount: 1,
-    // grabCursor: true,
+    grabCursor: true,
     //the ammount of draging effect
-    // slideToClickedSlide: true,
+    slideToClickedSlide: true,
     // mousewheel: true,
     // loop: true,
-    // slidesOffsetBefore: 100,
-    // slidesOffsetAfter: 100,
+    // slidesOffsetBefore: 30,
+    slidesOffsetAfter: 70,
     breakpoints:{
       1000:{
         slidesPerView: 2.8
       },
       500:{
-        slidesPerView: 2.2
+        slidesPerView: 1.2
       },
       300:{
         slidesPerView: 1.2

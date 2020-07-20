@@ -25,7 +25,7 @@
 
 .main-title {
     color: $black-color;
-    padding: 0 0 4rem 0px;
+    padding: 0 0 1rem 0px;
     text-transform: capitalize;
 
     @include tap {
@@ -54,7 +54,8 @@
 
         .ion-icon {
             padding-left: 0.5rem;
-
+            width: 30px;
+            
             @include super-small-mobile{
                 display: none;
             }

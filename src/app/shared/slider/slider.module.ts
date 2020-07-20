@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PipesModule } from '../pipes/pipes.module';
+import { RouterModule } from '@angular/router';
 //slider
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
@@ -20,6 +21,7 @@ const default_swiper_config:SwiperConfigInterface = {
   declarations: [SliderComponent],
   imports: [
     CommonModule,
+    RouterModule,
     PipesModule,
     SwiperModule
   ],
