@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute } from '@angular/router';
+//seo
+import { SeoService } from '../services/seo.service';
 
 
 @Component({
@@ -13,8 +15,7 @@ export class SinglepageComponent implements OnInit {
   MovieData: any;
   slug: string;
 
-  constructor(private api: ApiService, private route: ActivatedRoute) {
-
+  constructor(private api: ApiService, private route: ActivatedRoute, private seo:SeoService) {
     //the main movie name
     this.slug = this.route.snapshot.params.slug;
 
@@ -31,6 +32,7 @@ export class SinglepageComponent implements OnInit {
   Url: string = 'https://platform-api.sharethis.com/js/sharethis.js#property=5ed86f8ee9c615001202775d&product=inline-share-buttons';
 
   ngOnInit() {
+    //for the emojes script injection
     this.loadAPI = new Promise((resolve) => {
       console.log('resolving ....');
       console.log('preparing to load...')
@@ -41,5 +43,9 @@ export class SinglepageComponent implements OnInit {
       node.charset = 'utf-8';
       document.getElementsByTagName('head')[0].appendChild(node);
     });
+
+    //SEO
+    this.seo.SEO();
+
   }
 }

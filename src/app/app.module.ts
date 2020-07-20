@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
-
 //main modules
 import { HomepageModule } from './Homepage/Homepage.module';
 import { SinglepageModule } from './Singlepage/Singlepage.module';

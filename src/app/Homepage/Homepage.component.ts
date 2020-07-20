@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-Homepage',
@@ -12,7 +13,7 @@ export class HomepageComponent implements OnInit {
   topmovies:any;
   moviesData:any;
 
-  constructor(private api:ApiService) { 
+  constructor(private api:ApiService, private seo:SeoService) { 
     api.MoviesData()
       .subscribe(data =>{
         this.moviesData = data;
@@ -25,6 +26,6 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.seo.SEO();
   }
-
 }

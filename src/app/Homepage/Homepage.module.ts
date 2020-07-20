@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SeoService } from '../services/seo.service';
 
 // shared modules
 import { SharedModule } from '../shared/shared.module';
@@ -36,6 +37,6 @@ import { SearchComponent } from './search/search.component';
     SearchComponent
   ],
 
-  providers:[]
+  providers:[SeoService]
 })
 export class HomepageModule { }

@@ -4,6 +4,7 @@
     }
 </style>
 
+{{ MovieData|json }}
 
 <app-header *ngIf="MovieData ; else loading" [MovieData]='MovieData'></app-header>
 
