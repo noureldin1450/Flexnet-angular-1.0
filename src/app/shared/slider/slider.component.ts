@@ -12,7 +12,8 @@ export class SliderComponent implements OnInit {
 
   @Input() moviesData:any;
   @Input() title:string;
-  @Input() icon:string;
+  @Input() icon?:string;
+  @Input() amount?:number;
 
 
 

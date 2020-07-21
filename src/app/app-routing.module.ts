@@ -5,6 +5,7 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
 import { HomepageComponent } from './Homepage/Homepage.component';
 import { SinglepageComponent } from './Singlepage/Singlepage.component';
+import { TagpageComponent } from './tagpage/tagpage.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'top'
@@ -13,6 +14,7 @@ const routerOptions: ExtraOptions = {
 const routes: Routes = [
   { path:'', component: HomepageComponent},
   { path:'movies/:slug', component: SinglepageComponent},
+  { path:'tags/:tag', component: TagpageComponent},
   { path:'**', component: PagenotfoundComponent },
 ];
 

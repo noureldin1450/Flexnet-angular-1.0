@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
+//slider
+import { SliderModule } from './shared/slider/slider.module';
+
 //main modules
 import { HomepageModule } from './Homepage/Homepage.module';
 import { SinglepageModule } from './Singlepage/Singlepage.module';
@@ -16,6 +19,7 @@ import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.compon
 
 //api
 import { ApiService } from './services/api.service';
+import { TagpageComponent } from './tagpage/tagpage.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +27,10 @@ import { ApiService } from './services/api.service';
     NavComponent,
     FooterComponent,
     PagenotfoundComponent,
+    TagpageComponent,
   ],
   imports: [
+    SliderModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

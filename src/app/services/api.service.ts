@@ -19,6 +19,10 @@ export class ApiService {
     return this.http.get(`${this.HEADERS}${this.APIURL}tags.json`);
   }
 
+  TagData(tag){
+    return this.http.get(`${this.HEADERS}${this.APIURL}tags/${tag}${this.FORMAT}`);
+  }
+
   MoviesData(){
     return this.http.get(`${this.HEADERS}${this.APIURL}movies.json`);
   }
