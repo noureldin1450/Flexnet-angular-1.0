@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="tags">
-                    <a *ngFor="let tag of MovieData.tags" href="/tags/{{ tag }}" title="{{ tag }} Movies">{{ tag }}</a>
+                    <a *ngFor="let tag of MovieData.tags" [routerLink]="['/tags/', tag]" title="{{ tag }} Movies">{{ tag }}</a>
                 </div>
 
                 <div class="stars">

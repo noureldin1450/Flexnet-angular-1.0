@@ -41,7 +41,7 @@
                     font-weight: 800;
                     @include mobile {
                         display: block;
-                        margin: .5rem 0px;
+                        margin: 0.5rem 0px;
                     }
                     @include tap {
                         padding: 0.1rem 0.4rem;
@@ -63,5 +63,26 @@
         @include laptop {
             width: 100%;
         }
+    }
+    .plyr {
+        width: 100% !important;
+        height: 90vh;
+    }
+    .plyr__control--overlaid {
+        background: #f95959 !important;
+        transform: scale(1.5) !important;
+
+        @include mobile{
+            transform: scale(1.2) !important;
+        }
+    }
+    .plyr--full-ui input[type=range]{
+        color: #f95959 !important;
+    }
+    .plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true]{
+        background: #f95959 !important;
+    }
+    .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before{
+        background: #f95959 !important;
     }
 }
