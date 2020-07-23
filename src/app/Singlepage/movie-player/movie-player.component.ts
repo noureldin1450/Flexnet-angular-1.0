@@ -23,10 +23,20 @@ export class MoviePlayerComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes);
     const MovieData = changes['MovieData']
+
+    //when we had the data from the api
     if (MovieData.currentValue) {
       console.log('data has loaded');
-      
-      this.pushdata(this.MovieData.fushaarserver.q240, this.MovieData.fushaarserver.q480,this.MovieData.fushaarserver.q1080);
+
+      let fushaarid = this.MovieData.fushaarid;
+      let fushaarapi = 'https://bg.stream.fushaar.com/media/';
+      let googleapi = 'https://storage.googleapis.com/neon-reporter-274200.appspot.com/fushaar/media/';
+      let ext = '.mp4';
+
+      let fushaarapi240 = `${fushaarapi}${fushaarid}/${fushaarid}-240p${ext}`;
+      let fushaarapi480 = `${fushaarapi}${fushaarid}/${fushaarid}-480p${ext}`;
+      let fushaarapi1080 = `${fushaarapi}${fushaarid}/${fushaarid}${ext}`;      
+      this.pushdata(fushaarapi240,fushaarapi480,fushaarapi1080);
     }
   }
   

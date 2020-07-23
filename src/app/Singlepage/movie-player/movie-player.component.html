@@ -1,8 +1,4 @@
 
-
-{{ MovieData.fushaarid|json }}
-
-
 <!-- this is movie player -->
 <section class="movie" *ngIf="MovieData">
     <div class="container">
@@ -14,10 +10,10 @@
 
         <div class="servers">
             <ul *ngIf="MovieData.server2; else nootherservers">
-                <ng-template [ngIf]="MovieData.fushaarserver">
+                <ng-template [ngIf]="MovieData.fushaarid">
                     <li [class.active]="server === 1" (click)="server = 1">Server 1</li>
                 </ng-template>
-                <ng-template [ngIf]="!MovieData.fushaarserver">
+                <ng-template [ngIf]="!MovieData.fushaarid">
                     <li [class.active]="server === 1" (click)="server = 1">Server 1</li>
                 </ng-template>
                 <ng-template [ngIf]="MovieData.server2">
@@ -38,7 +34,7 @@
         </div>
 
         <div id="movie-player">
-            <ng-template [ngIf]="( MovieData.fushaarserver && server === 1)">
+            <ng-template [ngIf]="( MovieData.fushaarid && server === 1)">
                 <div *ngIf="player" class="plyr" plyr
                     [plyrTitle]="MovieData.title" 
                     [plyrPlaysInline]="'true'" 
@@ -47,7 +43,7 @@
                 </div>
             </ng-template>
 
-            <ng-template [ngIf]="( !MovieData.fushaarserver && server === 1)">
+            <ng-template [ngIf]="( !MovieData.fushaarid && server === 1)">
                 <ng-template [ngIf]="MovieData.server2">
                     <span [innerHTML]="MovieData.server2 | moviePlayer"></span>
                 </ng-template>
