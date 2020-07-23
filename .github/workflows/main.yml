@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: CheackOut Repo
         uses: actions/checkout@master
-        
+
       - name: Setup Node
         uses: actions/setup-node@master
         with:
@@ -28,3 +28,4 @@ jobs:
           args: deploy --only hosting
         env:
           FIREBASE_TOKEN: AIzaSyAc5mdOC-FCdOsP1jB6ptKI3w4i6xw6hdc
+
