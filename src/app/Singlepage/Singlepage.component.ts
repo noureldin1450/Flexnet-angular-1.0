@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges, OnChanges, ɵɵNgOnChangesFeature } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 //seo
@@ -10,12 +10,13 @@ import { SeoService } from '../services/seo.service';
   templateUrl: './Singlepage.component.html',
   styleUrls: ['./Singlepage.component.scss']
 })
+
 export class SinglepageComponent implements OnInit {
 
   MovieData: any;
   slug: string;
 
-  constructor(private api: ApiService, private route: ActivatedRoute, private seo:SeoService) {
+  constructor(private api: ApiService, private route: ActivatedRoute, private seo: SeoService) {
     //the main movie name
     this.slug = this.route.snapshot.params.slug;
 
@@ -45,7 +46,8 @@ export class SinglepageComponent implements OnInit {
     });
 
     //SEO
-    this.seo.SEO();
+    this.seo.SEO(this.MovieData.title);
 
   }
+  
 }

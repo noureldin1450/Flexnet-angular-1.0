@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, SimpleChanges } from '@angular/core';
+import { SeoService } from 'src/app/services/seo.service';
 
 @Component({
   selector: 'app-movie-info',
@@ -8,12 +9,21 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 })
 export class MovieInfoComponent implements OnInit {
 
-  
-  @Input() MovieData:any;
-  
-  constructor() { }
+
+  @Input() MovieData: any;
+
+  constructor(private seo:SeoService) { }
 
   ngOnInit(): void {
+  }
+
+
+  ngOnChanges(changes: SimpleChanges) {
+    const MovieData = changes['MovieData'];
+    if (MovieData.currentValue) {
+      //SEO
+      this.seo.SEO(this.MovieData.title,this.MovieData.story,this.MovieData.moviecover);
+    }
   }
 
 }
