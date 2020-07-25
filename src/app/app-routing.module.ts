@@ -8,8 +8,10 @@ import { SinglepageComponent } from './Singlepage/Singlepage.component';
 import { TagpageComponent } from './tagpage/tagpage.component';
 
 const routerOptions: ExtraOptions = {
-  scrollPositionRestoration: 'top'
-}
+  scrollPositionRestoration: 'top',
+  anchorScrolling: 'enabled',
+  scrollOffset: [0, 0],
+};
 
 const routes: Routes = [
   { path:'', component: HomepageComponent},

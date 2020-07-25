@@ -14,11 +14,11 @@
                     <h2 class="info__duration">{{MovieData.duration}}</h2>
                     <h2 class="info__rating">{{MovieData.rating}}/10</h2>
                     <div class="btns">
-                        <a title="Watch Now">
+                        <a title="Watch Now" [routerLink]='"."' [fragment]="'movieplayer'"> 
                             Watch now
                             <img class="ion-icon" src="/assets/icons/play.svg" />
                         </a>
-                        <a title="More info">
+                        <a title="More info" [routerLink]='"."' [fragment]="'more-info'" >
                             more info
                             <img class="ion-icon" src="/assets/icons/information-circle.svg" />
                         </a>
