@@ -26,6 +26,6 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.seo.SEO();
+    this.seo.SEO('Flexnet - watch free cinema movies online. flexnet free new movies online');
   }
 }

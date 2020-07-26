@@ -20,7 +20,7 @@ export class SeoService {
 
   addtitle(title?:string){
     return(
-      this.Seotitle.setTitle(title + " Watch Now For Free - Flexnet" || this.title ),
+      this.Seotitle.setTitle((title + " Watch Now For Free - Flexnet") || this.title ),
 
       this.Seometa.addTags([
         { name:'og:title', content: title || this.title }
