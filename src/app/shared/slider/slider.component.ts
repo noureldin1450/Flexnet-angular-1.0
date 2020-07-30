@@ -15,6 +15,7 @@ export class SliderComponent implements OnInit {
   @Input() title: string;
   @Input() icon?: string;
   @Input() amount?: number;
+  @Input() Link?: string;
 
 
   config: SwiperConfigInterface | SwiperLazyInterface = {

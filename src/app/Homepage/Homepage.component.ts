@@ -12,6 +12,7 @@ export class HomepageComponent implements OnInit {
   latestmovies:any;
   topmovies:any;
   moviesData:any;
+  TagsMovies:any;
 
   constructor(private api:ApiService, private seo:SeoService) { 
     api.MoviesData()
@@ -22,6 +23,11 @@ export class HomepageComponent implements OnInit {
         console.log(this.moviesData)
         console.log(this.latestmovies)
         console.log(this.topmovies)
+      });
+    
+    api.HomePageTagsData()
+      .subscribe(data => {
+        this.TagsMovies = data;
       })
   }
 

@@ -2,9 +2,27 @@
 
 <app-loading *ngIf="!latestmovies"></app-loading>
 
+
 <app-tags></app-tags>
 <app-header [moviesData]="latestmovies"></app-header>
 <app-search></app-search>
 
 <app-slider [title]="'FlexNet Latest Movies'" [amount]="10" [icon]="'film-red'" [moviesData]="latestmovies"></app-slider>
 <app-slider [title]="'FlexNet Top Movies'" [amount]="10" [icon]="'star-red'" [moviesData]="topmovies"></app-slider>
+
+<ng-template *ngFor="let slider of TagsMovies.homepagetags">
+
+</ng-template>
+
+<app-slider [Link]="'action'" [title]="'Action movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Action"></app-slider>
+<app-slider [Link]="'Adventure'" [title]="'Adventure movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Adventure"></app-slider>
+<app-slider [Link]="'Animation'" [title]="'Animation movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Animation"></app-slider>
+<app-slider [Link]="'Comedy'" [title]="'Comedy movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Comedy"></app-slider>
+<app-slider [Link]="'Crime'" [title]="'Crime movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Crime"></app-slider>
+<app-slider [Link]="'Drama'" [title]="'Drama movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Drama"></app-slider>
+<app-slider [Link]="'Horror'" [title]="'Horror movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Horror"></app-slider>
+<app-slider [Link]="'Family'" [title]="'Family movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Family"></app-slider>
+<app-slider [Link]="'Mystery'" [title]="'Mystery movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Mystery"></app-slider>
+<app-slider [Link]="'Romance'" [title]="'Romance movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Romance"></app-slider>
+<app-slider [Link]="'Thriller'" [title]="'Thriller movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Thriller"></app-slider>
+<app-slider [Link]="'War'" [title]="'War movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.War"></app-slider>

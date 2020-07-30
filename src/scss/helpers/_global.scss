@@ -45,6 +45,7 @@
     &__text {
         display: flex;
         align-items: center;
+        float: left;
         clear: both;
 
         @include tap {

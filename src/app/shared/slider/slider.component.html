@@ -4,12 +4,7 @@
             {{ title | titlecase }}
             <img *ngIf="icon" class="ion-icon" src="/assets/icons/{{ icon }}.svg">
         </span>
-        <!-- {{ if .Route }} -->
-        <!-- <a href="{{.Site.BaseURL}}{{.Route}}">
-                View More
-                <ion-icon name="play-forward" class="more"></ion-icon>
-            </a> -->
-        <!-- {{end}} -->
+        <a [routerLink]="'/tags/'+Link" *ngIf="Link">View More</a>
     </h2>
 </div>
 
