@@ -7,6 +7,7 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { SliderComponent } from './slider.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 
 //default settings for the swiper slider
@@ -23,13 +24,15 @@ const default_swiper_config:SwiperConfigInterface = {
     CommonModule,
     RouterModule,
     PipesModule,
-    SwiperModule
+    SwiperModule,
+    LazyLoadImageModule
   ],
 
   exports:[
     PipesModule,
     SwiperModule,
-    SliderComponent
+    SliderComponent,
+    LazyLoadImageModule
   ],
   
   providers:[

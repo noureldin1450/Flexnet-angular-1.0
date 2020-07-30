@@ -9,12 +9,12 @@ import { SwiperLazyInterface } from 'ngx-swiper-wrapper';
 })
 export class SliderComponent implements OnInit {
 
-
-  @Input() moviesData:any;
-  @Input() title:string;
-  @Input() icon?:string;
-  @Input() amount?:number;
-
+  defaultimage:string = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FyoJ8iaULJd59S%2F200.gif&f=1&nofb=1';
+  errorimage:string = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F26xBIygOcC3bAWg3S%2Fgiphy.gif&f=1&nofb=1'
+  @Input() moviesData: any;
+  @Input() title: string;
+  @Input() icon?: string;
+  @Input() amount?: number;
 
 
   config: SwiperConfigInterface | SwiperLazyInterface = {
@@ -37,22 +37,26 @@ export class SliderComponent implements OnInit {
     // loop: true,
     // slidesOffsetBefore: 30,
     slidesOffsetAfter: 70,
-    breakpoints:{
-      1000:{
+    breakpoints: {
+      1000: {
         slidesPerView: 2.8
       },
-      500:{
+      500: {
         slidesPerView: 1.2
       },
-      300:{
+      300: {
         slidesPerView: 1.2
       }
     }
 
   }
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+
+
+  }
 
 }

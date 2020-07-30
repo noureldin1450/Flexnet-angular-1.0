@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="main-title">
+    <h2 class="main-title" *ngIf="title">
         <span class="main-title__text">
             {{ title | titlecase }}
             <img *ngIf="icon" class="ion-icon" src="/assets/icons/{{ icon }}.svg">
@@ -16,12 +16,13 @@
 <div class="swiper">
 
     <swiper [config]="config" *ngIf="amount">
-
             <li class="slider_card" *ngFor="let movie of moviesData.slice(0, amount)">
                 <a [routerLink]="movie.slug">
-                    <div class="bg"
-                        style="background-image: url({{movie.moviebg}});background-position: center;background-size: cover; background-repeat: no-repeat;">
-    
+
+                    <div class="bg">
+
+                    <img [defaultImage]="defaultimage" [errorImage]="errorimage" [lazyLoad]="movie.moviebg" [alt]="movie.title">
+
                         <div class="info">
                             <div class="container">
                                 <h2 class="movie_name">{{ movie.title | truncate:[25] }}</h2>
@@ -48,9 +49,9 @@
     <swiper [config]="config" *ngIf="!amount">
             <li class="slider_card" *ngFor="let movie of moviesData">
                 <a [routerLink]="movie.slug">
-                    <div class="bg"
-                        style="background-image: url({{movie.moviebg}});background-position: center;background-size: cover; background-repeat: no-repeat;">
-    
+                    <div class="bg">
+                        <img [defaultImage]="defaultimage" [errorImage]="errorimage" [lazyLoad]="movie.moviebg" [alt]="movie.title">
+
                         <div class="info">
                             <div class="container">
                                 <h2 class="movie_name">{{ movie.title | truncate:[25] }}</h2>

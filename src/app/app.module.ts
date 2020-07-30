@@ -10,7 +10,7 @@ import { SliderModule } from './shared/slider/slider.module';
 //main modules
 import { HomepageModule } from './Homepage/Homepage.module';
 import { SinglepageModule } from './Singlepage/Singlepage.module';
-
+import { TagpageModule } from './tagpage/tagpage.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -19,7 +19,7 @@ import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.compon
 
 //api
 import { ApiService } from './services/api.service';
-import { TagpageComponent } from './tagpage/tagpage.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { TagpageComponent } from './tagpage/tagpage.component';
     NavComponent,
     FooterComponent,
     PagenotfoundComponent,
-    TagpageComponent,
   ],
   imports: [
     SliderModule,
@@ -36,7 +35,8 @@ import { TagpageComponent } from './tagpage/tagpage.component';
     FormsModule,
     HttpClientModule,
     HomepageModule,
-    SinglepageModule
+    SinglepageModule,
+    TagpageModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

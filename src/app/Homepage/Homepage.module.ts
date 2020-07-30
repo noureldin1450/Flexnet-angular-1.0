@@ -10,7 +10,6 @@ import { SharedModule } from '../shared/shared.module';
 import { HomepageComponent } from './Homepage.component';
 import { TagsComponent } from './tags/tags.component';
 import { HeaderComponent } from './header/header.component';
-import { LoadingComponent } from '../shared/loading/loading.component';
 import { SearchComponent } from './search/search.component';
 
 
@@ -26,14 +25,12 @@ import { SearchComponent } from './search/search.component';
     HomepageComponent,
     TagsComponent,
     HeaderComponent,
-    LoadingComponent,
     SearchComponent
   ],
 
   exports:[
     HomepageComponent,
     HeaderComponent,
-    LoadingComponent,
     SearchComponent
   ],
 

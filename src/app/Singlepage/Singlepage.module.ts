@@ -4,11 +4,11 @@ import { SinglepageComponent } from './Singlepage.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { TrailerPipe } from '../trailer.pipe';
-import { IconPipe } from '../icon.pipe';
 import { MoviePlayerPipe } from '../services/movie-player.pipe';
-import { PipesModule } from '../shared/pipes/pipes.module';
 import { PlyrModule } from 'ngx-plyr';
+
+//shared module
+import { SharedModule } from '../shared/shared.module';
 
 //api
 import { ApiService } from '../services/api.service';
@@ -25,26 +25,23 @@ import { MoviePlayerComponent } from './movie-player/movie-player.component';
   imports: [
     CommonModule,
     FormsModule,
-    PipesModule,
     RouterModule, 
-    PlyrModule
+    PlyrModule,
+    SharedModule
   ],
+
   declarations: [
     SinglepageComponent,
     HeaderComponent,
-    TrailerPipe, 
-    IconPipe,
     MovieInfoComponent,
     MoviePlayerComponent,
-    MoviePlayerPipe
+    MoviePlayerPipe,
   ],
   exports:[
     SinglepageComponent,
     HeaderComponent,
-    TrailerPipe,
-    IconPipe,
     MovieInfoComponent,
-    MoviePlayerComponent
+    MoviePlayerComponent,
   ],
   providers:[ApiService]
 })

@@ -1,4 +1,7 @@
 
+
+<app-loading *ngIf="!latestmovies"></app-loading>
+
 <app-tags></app-tags>
 <app-header [moviesData]="latestmovies"></app-header>
 <app-search></app-search>

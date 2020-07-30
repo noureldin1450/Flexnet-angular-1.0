@@ -13,6 +13,7 @@ import { SeoService } from '../services/seo.service';
 
 export class SinglepageComponent implements OnInit {
 
+  loading:boolean = true;
   MovieData: any;
   slug: string;
 
@@ -24,6 +25,7 @@ export class SinglepageComponent implements OnInit {
     api.MovieData(this.slug)
       .subscribe(data => {
         this.MovieData = data;
+        this.loading = false;
       })
   };
 
