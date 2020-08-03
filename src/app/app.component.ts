@@ -24,7 +24,6 @@ export class AppComponent {
     );
 
     // for every changing in the navigation
-    alert(this.analytics)
     navEndEvents.subscribe((event: NavigationEnd) =>{
       gtag('config', this.analytics,{
         'page_path': event.urlAfterRedirects
