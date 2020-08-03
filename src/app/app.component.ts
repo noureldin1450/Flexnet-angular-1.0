@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { environment } from '../environments/environment'
 
 
 declare var gtag;
@@ -13,16 +14,19 @@ declare var gtag;
 
 export class AppComponent {
 
-  constructor(router:Router){
+  analytics:string;
 
+  constructor(router:Router){
+    this.analytics = environment.analytics;
+    
     const navEndEvents = router.events.pipe(
       filter(event => event instanceof NavigationEnd),
     );
 
     // for every changing in the navigation
-    
+    alert(this.analytics)
     navEndEvents.subscribe((event: NavigationEnd) =>{
-      gtag('config', 'UA-146859399-3',{
+      gtag('config', this.analytics,{
         'page_path': event.urlAfterRedirects
       });
     })
