@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-footer',
@@ -8,9 +9,24 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
   }
+  httpOptions:any = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+    observe: "response",
+    responseType: "text",
+  }
 
+  submitForm(name: string, email: string, phone: string) {
+    
+    const urlToHit = "/";
+
+    const dataToSend = new HttpParams()
+        .set(`form-name`, "Email")
+        .set(`email`, email);
+
+      return this.http.post(urlToHit, dataToSend.toString(), this.httpOptions);
+  }
 }
