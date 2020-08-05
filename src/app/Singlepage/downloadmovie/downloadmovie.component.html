@@ -1,0 +1,11 @@
+
+<div class="container" *ngIf="MovieData">
+    <fieldset class="download-links">
+        <legend>Download: </legend>
+        <ul>
+            <li><a onmouseover="self.status='Downloadable file'; return true" onmouseout="self.status=''" onclick="alert('Please right click and use \'Save Target/Link As\'.'); return false" [href]="fushaarapi240">240p</a></li>
+            <li><a onmouseover="self.status='Downloadable file'; return true" onmouseout="self.status=''" onclick="alert('Please right click and use \'Save Target/Link As\'.'); return false" [href]="fushaarapi480">480p</a></li>
+            <li><a onmouseover="self.status='Downloadable file'; return true" onmouseout="self.status=''" onclick="alert('Please right click and use \'Save Target/Link As\'.'); return false" [href]="fushaarapi1080">1080p</a></li>
+        </ul>
+    </fieldset>
+</div>

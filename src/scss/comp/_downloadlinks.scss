@@ -1,0 +1,60 @@
+.download-links {
+    border: 5px solid $black-color;
+    border-radius: 5px;
+    padding: 0rem 0px 0px 1rem;
+    width: 90%;
+    margin: 0px auto;
+
+    legend {
+        padding: 0rem 1rem 0px 0.5rem;
+        font-weight: 900;
+        font-size: 1.3rem;
+    }
+
+    ul {
+        padding: 2rem 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tap{
+            display: block;
+        }
+
+        li {
+            display: inline-block;
+            text-align: center;
+
+            @include tap{
+                display: block;
+                :first-of-type{
+                    margin-top: 0px !important;
+                }
+                :last-of-type{
+                    margin-bottom: 0px !important;
+                }
+                margin: 2rem 0px;
+            }
+
+            a {
+                background-color: $black-color;
+                padding: 0.5rem 8rem;
+                font-weight: 900;
+                border-radius: 5px;
+                margin: 0px 1rem;
+                font-size: 1.3rem;
+                width: 100%;
+                
+                @include laptop{
+                    padding: 0.5rem 5rem;
+                }
+                @include tap{
+                    padding: 0.5rem 8rem;
+                }
+                @include small-mobile{
+                    padding: .5rem 6rem;
+                }
+            }
+        }
+    }
+}

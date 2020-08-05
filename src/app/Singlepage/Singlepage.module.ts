@@ -18,7 +18,7 @@ import { ApiService } from '../services/api.service';
 import { HeaderComponent } from './header/header.component';
 import { MovieInfoComponent } from './movie-info/movie-info.component';
 import { MoviePlayerComponent } from './movie-player/movie-player.component';
-
+import { DownloadmovieComponent } from './downloadmovie/downloadmovie.component';
 
 
 @NgModule({
@@ -36,6 +36,7 @@ import { MoviePlayerComponent } from './movie-player/movie-player.component';
     MovieInfoComponent,
     MoviePlayerComponent,
     MoviePlayerPipe,
+    DownloadmovieComponent,
   ],
   exports:[
     SinglepageComponent,
