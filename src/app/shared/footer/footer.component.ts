@@ -9,24 +9,34 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
-  httpOptions:any = {
+  httpOptions: any = {
     headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
     observe: "response",
     responseType: "text",
   }
 
   submitForm(email: string) {
-    
+
+    console.log(email)
+
     const urlToHit = "/";
 
     const dataToSend = new HttpParams()
-        .set(`form-name`, "newsletter")
-        .set(`email`, email);
+      .set(`form-name`, "newsletter")
+      .set(`email`, email);
+    console.log(dataToSend);
+    console.log(dataToSend.toString);
 
-      return this.http.post(urlToHit, dataToSend.toString(), this.httpOptions);
+    // return this.http.post(urlToHit, dataToSend.toString(), this.httpOptions);
+
+    return this.http.post(urlToHit, dataToSend.toString(), {
+      headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+      observe: "response",
+      responseType: "text",
+    });
   }
 }
