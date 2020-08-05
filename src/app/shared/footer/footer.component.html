@@ -15,12 +15,12 @@
                 <div class="email">
                     <h3>what is your email?</h3>
 
-                    <form  name="Email" method="POST" data-netlify="true" netlify>
+                    <form  name="newsletter" method="POST" data-netlify="true" netlify>
 
                         <input type="email" placeholder="Email" name="email">
 
                         <span class="button">
-                            <button type="submit">
+                            <button type="submit" (click)="submitForm('testaccount@gmail.com')"> 
                                 <a>SUBSCRIBE</a>
                             </button>
                         </span>

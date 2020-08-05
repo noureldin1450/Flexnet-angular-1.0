@@ -19,12 +19,12 @@ export class FooterComponent implements OnInit {
     responseType: "text",
   }
 
-  submitForm(name: string, email: string, phone: string) {
+  submitForm(email: string) {
     
     const urlToHit = "/";
 
     const dataToSend = new HttpParams()
-        .set(`form-name`, "Email")
+        .set(`form-name`, "newsletter")
         .set(`email`, email);
 
       return this.http.post(urlToHit, dataToSend.toString(), this.httpOptions);
