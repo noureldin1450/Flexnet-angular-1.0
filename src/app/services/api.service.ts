@@ -35,5 +35,9 @@ export class ApiService {
     return this.http.get(`${this.HEADERS}${this.APIURL}homepagetags.json`);
   }
 
+  Announcements(){
+    return this.http.get(`${this.HEADERS}${this.APIURL}announcements.json`);
+  }
+
 
 }
