@@ -9,14 +9,9 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private HttpHeaders: HttpHeaders) {}
 
   ngOnInit(): void {
-  }
-  httpOptions: any = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
-    observe: "response",
-    responseType: "text",
   }
 
   submitForm(email: string) {
@@ -33,6 +28,12 @@ export class FooterComponent implements OnInit {
 
     console.log(dataToSend.toString());
 
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+      observe: "response",
+      responseType: "text",
+    }
+
     // return this.http.post(urlToHit, dataToSend.toString(), this.httpOptions);
 
     return this.http.post(urlToHit, dataToSend.toString(), {
@@ -40,5 +41,6 @@ export class FooterComponent implements OnInit {
       observe: "response",
       responseType: "text",
     });
+
   }
 }
