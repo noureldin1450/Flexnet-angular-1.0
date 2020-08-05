@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -7,38 +8,31 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
   styleUrls: ['./footer.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class FooterComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+  newsletterForm = new FormGroup({
+    email: new FormControl('')
+  })
+
+  onSubmit(){
+    const body = new HttpParams()
+      .set('form-name', 'newsletter')
+      .append('email', this.newsletterForm.value.email)
+      this.http.post('/', body.toString(), {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }).subscribe(res =>{
+        console.log('send succsesfuly')
+      }, err =>{
+        console.log('error'+ err)
+      })
+  }
+
+
   ngOnInit(): void {
   }
 
-  submitForm(email: string) {
 
-    console.log(email)
-
-    const urlToHit = "/";
-
-    const dataToSend = new HttpParams()
-      .set('form-name', "newsletter")
-      .set('email', email);
-
-    console.log(dataToSend);
-
-    console.log(dataToSend.toString());
-
-    return this.http.post(urlToHit, dataToSend.toString(), {
-      headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
-      observe: "response",
-      responseType: "text"
-    });
-
-    // return this.http.post(urlToHit, dataToSend.toString(), {
-    //   headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
-    //   observe: "response",
-    //   responseType: "text"
-    // });
-
-  }
 }

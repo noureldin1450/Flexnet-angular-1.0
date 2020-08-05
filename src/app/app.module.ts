@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //slider
 import { SliderModule } from './shared/slider/slider.module';
@@ -37,6 +38,7 @@ import { ApiService } from './services/api.service';
     HomepageModule,
     SinglepageModule,
     TagpageModule,
+    ReactiveFormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
