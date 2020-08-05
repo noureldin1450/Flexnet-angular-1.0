@@ -28,19 +28,17 @@ export class FooterComponent implements OnInit {
 
     console.log(dataToSend.toString());
 
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
-      observe: "response",
-      responseType: "text",
-    }
-
-    // return this.http.post(urlToHit, dataToSend.toString(), this.httpOptions);
-
     return this.http.post(urlToHit, dataToSend.toString(), {
       headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
       observe: "response",
-      responseType: "text",
+      responseType: "text"
     });
+
+    // return this.http.post(urlToHit, dataToSend.toString(), {
+    //   headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+    //   observe: "response",
+    //   responseType: "text"
+    // });
 
   }
 }

@@ -21,8 +21,8 @@
 <body>
   <app-root></app-root>
 
-  <form data-netlify="true" name="newsletter" style="display: none; opacity: 0; position: absolute;" hidden>
-    <input type="hidden" name="email">
+  <form netlify netlify-honeypot="bot-field" name="newsletter" style="display: none;" hidden>
+    <input type="text" name="email" hidden>
   </form>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
