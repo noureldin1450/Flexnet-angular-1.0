@@ -28,8 +28,10 @@ export class FooterComponent implements OnInit {
     const dataToSend = new HttpParams()
       .set(`form-name`, "newsletter")
       .set(`email`, email);
+
     console.log(dataToSend);
-    console.log(dataToSend.toString);
+
+    console.log(dataToSend.toString());
 
     // return this.http.post(urlToHit, dataToSend.toString(), this.httpOptions);
 
