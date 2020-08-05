@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private http: HttpClient, private HttpHeaders: HttpHeaders) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
   }
