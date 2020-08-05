@@ -21,8 +21,8 @@ export class FooterComponent implements OnInit {
     const urlToHit = "/";
 
     const dataToSend = new HttpParams()
-      .set(`form-name`, "newsletter")
-      .set(`email`, email);
+      .set('form-name', "newsletter")
+      .set('email', email);
 
     console.log(dataToSend);
 
