@@ -11,7 +11,7 @@
 <div class="swiper">
 
     <swiper [config]="config" *ngIf="amount">
-            <li class="slider_card" *ngFor="let movie of moviesData.slice(0, amount)">
+            <li class="slider_card" *ngFor="let movie of moviesData.slice(start || 0, amount)">
                 <a [routerLink]="movie.slug">
 
                     <div class="bg">
