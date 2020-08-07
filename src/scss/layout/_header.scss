@@ -20,12 +20,21 @@ header {
     font-size: 1.6rem;
     text-transform: uppercase;
     padding: 0px 0px 1rem 0px;
+    display: flex;
+    align-items: center;
+
+    .ion-icon {
+      padding-left: 0.5rem !important;
+      filter: invert(0.5) sepia(1) saturate(5) hue-rotate(-36deg);
+      width: 30px !important;
+    }
 
     @include lg-laptop {
       font-size: 1.5rem;
     }
     @include largtap {
       text-align: center;
+      flex-direction: row !important;
     }
   }
 
@@ -145,7 +154,7 @@ header {
                   color: #ffc93c;
                   .ion-icon {
                     width: 21px !important;
-                    margin-right: .4rem;
+                    margin-right: 0.4rem;
                   }
                 }
                 li {
@@ -165,10 +174,9 @@ header {
                     font-weight: 700;
                   }
 
-                  @include largtap{
+                  @include largtap {
                     margin-right: 1rem;
                   }
-
                 }
               }
             }
