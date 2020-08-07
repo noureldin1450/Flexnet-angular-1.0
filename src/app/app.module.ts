@@ -12,6 +12,7 @@ import { SliderModule } from './shared/slider/slider.module';
 import { HomepageModule } from './Homepage/Homepage.module';
 import { SinglepageModule } from './Singlepage/Singlepage.module';
 import { TagpageModule } from './tagpage/tagpage.module';
+import { MoviespageModule } from './moviespage/moviespage.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -32,6 +33,7 @@ import { ApiService } from './services/api.service';
   imports: [
     SliderModule,
     BrowserModule,
+    MoviespageModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
