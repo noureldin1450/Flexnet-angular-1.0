@@ -8,6 +8,7 @@ import { SinglepageComponent } from './Singlepage/Singlepage.component';
 import { TagpageComponent } from './tagpage/tagpage.component';
 import { MoviespageComponent } from './moviespage/moviespage.component';
 import { CategoriesComponent } from './shared/categories/categories.component';
+import { ReqpageComponent } from './reqpage/reqpage.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'top',
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path:'tags/:tag', component: TagpageComponent},
   { path:'movies', component: MoviespageComponent },
   { path:'categories', component: CategoriesComponent },
+  { path:'request', component: ReqpageComponent },
   { path:'**', component: PagenotfoundComponent },
 ];
 

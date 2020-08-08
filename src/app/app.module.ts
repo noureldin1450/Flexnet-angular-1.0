@@ -22,6 +22,7 @@ import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.compon
 
 //api
 import { ApiService } from './services/api.service';
+import { ReqpageComponent } from './reqpage/reqpage.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ApiService } from './services/api.service';
     NavComponent,
     FooterComponent,
     PagenotfoundComponent,
+    ReqpageComponent,
   ],
   imports: [
     SliderModule,
