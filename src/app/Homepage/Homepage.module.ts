@@ -12,12 +12,14 @@ import { TagsComponent } from './tags/tags.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { AnnouncementsComponent } from '../shared/announcements/announcements.component';
+import { CategoriesModule } from '../shared/categories/categories.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    CategoriesModule,
     SharedModule,
     FormsModule
   ],

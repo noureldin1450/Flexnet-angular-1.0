@@ -16,6 +16,7 @@ import { MoviespageModule } from './moviespage/moviespage.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { CategoriesModule } from './shared/categories/categories.module';
 import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
 
 
@@ -38,6 +39,7 @@ import { ApiService } from './services/api.service';
     FormsModule,
     HttpClientModule,
     HomepageModule,
+    CategoriesModule,
     SinglepageModule,
     TagpageModule,
     ReactiveFormsModule
