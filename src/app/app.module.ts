@@ -23,6 +23,8 @@ import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.compon
 //api
 import { ApiService } from './services/api.service';
 import { ReqpageComponent } from './reqpage/reqpage.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { ReqpageComponent } from './reqpage/reqpage.component';
     CategoriesModule,
     SinglepageModule,
     TagpageModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

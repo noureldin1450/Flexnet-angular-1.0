@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { environment } from '../environments/environment'
+import { UpdateService } from './services/update.service';
 
 
 declare var gtag;
@@ -16,7 +17,7 @@ export class AppComponent {
 
   analytics:string;
 
-  constructor(router:Router){
+  constructor(router:Router, private update:UpdateService){
     this.analytics = environment.analytics;
     
     const navEndEvents = router.events.pipe(
