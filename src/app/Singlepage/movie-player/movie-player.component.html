@@ -35,7 +35,7 @@
 
         <div id="movie-player">
             <ng-template [ngIf]="( MovieData.fushaarid && server === 1)">
-                <div *ngIf="player" class="plyr" plyr
+                <div *ngIf="player" class="plyr animated fadeIn" plyr
                     [plyrTitle]="MovieData.title" 
                     [plyrPlaysInline]="'true'" 
                     [plyrSources]="videoSources"
