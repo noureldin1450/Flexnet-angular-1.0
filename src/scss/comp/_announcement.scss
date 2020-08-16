@@ -2,9 +2,7 @@
 .announcement{
     text-align: center;
     margin-bottom: 2.5rem;
-    @include small-laptop{
-        background-color: $main-color;
-    }
+
     @include tap{
         margin-top: 3rem;
 
