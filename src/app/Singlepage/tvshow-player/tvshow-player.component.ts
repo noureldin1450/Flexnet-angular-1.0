@@ -21,7 +21,7 @@ export class TvshowPlayerComponent implements OnInit {
   UpdateEp(Ep){
     this.iframeLink = `https://123files.club/imdb/tv/?id=${this.imdbid}&s=${this.season}&e=${Ep}`;
     this.episode = Ep;
-    alert(this.iframeLink);
+    // alert(this.iframeLink);
   }
   UpdateSe(Se){
     this.iframeLink = `https://123files.club/imdb/tv/?id=${this.imdbid}&s=${Se}&e=${this.episode}`;
