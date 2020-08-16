@@ -14,9 +14,12 @@
         }
     }
     p{
-        padding: 0px 1rem;
+        padding: .5rem 1rem;
         max-width: 700px;
         margin: 0px auto;
+        @include tap{
+            padding: .5rem 1.5rem;
+        }
     }
     .container{
         background-color: $main-color;
