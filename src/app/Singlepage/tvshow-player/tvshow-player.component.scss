@@ -1,0 +1,61 @@
+@import "../../../styles.scss";
+@import "../../../scss/comp/movieplayer";
+
+.active {
+    background: $main-color !important;
+    color: $white-color !important;
+}
+
+.movie {
+    span {
+        iframe {
+            float: right !important;
+            width: 89% !important;  
+            @include lg-laptop{
+                width: 80% !important;
+            }
+            @include tap{
+                width: 100% !important;
+                float: none;
+            }
+        }
+    }
+
+    .episodes {
+        float: left;
+        height: 80vh;
+        overflow-y: scroll;
+        
+        @include tap{
+            width: 100%;
+            float: none;
+            height: 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        li {
+            font-weight: 900;
+            border: 2.5px solid $main-color;
+            color: $main-color;
+            padding: 0.1rem 2rem;
+            border-radius: 5px;
+            margin-right: .5rem;
+            cursor: pointer;
+            margin-bottom: 1.4rem;
+
+            @include tap{
+                display: inline-block;
+                margin: 1rem 0.5rem .5rem 0.5rem;
+
+                &:last-of-type{
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+
+.sharethis-inline-reaction-buttons {
+    clear: both !important;
+}

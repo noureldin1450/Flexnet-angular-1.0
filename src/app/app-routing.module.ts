@@ -18,6 +18,7 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   { path:'', component: HomepageComponent},
+  { path:'tv-shows/:slug', component: SinglepageComponent},
   { path:'movies/:slug', component: SinglepageComponent},
   { path:'tags/:tag', component: TagpageComponent},
   { path:'movies', component: MoviespageComponent },

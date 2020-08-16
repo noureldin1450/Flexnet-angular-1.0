@@ -1,15 +1,31 @@
 
 
 
+
 <app-loading *ngIf="loading"></app-loading>
 
-<app-header [MovieData]='MovieData'></app-header>
 
-<app-movie-info [MovieData]='MovieData'></app-movie-info>
+<ng-template [ngIf]="MovieData.type === 'movie'" [ngIfElse]="tvshow">
 
-<app-movie-player [MovieData]='MovieData'></app-movie-player>
+    <app-header [MovieData]='MovieData'></app-header>
+    
+    <app-movie-info [MovieData]='MovieData'></app-movie-info>
+    
+    <app-movie-player [MovieData]='MovieData'></app-movie-player>
+    
+    <app-downloadmovie [MovieData]="MovieData"></app-downloadmovie>
 
-<app-downloadmovie [MovieData]="MovieData"></app-downloadmovie>
+</ng-template>
+
+<ng-template #tvshow>
+
+    <app-header [MovieData]='MovieData'></app-header>
+    <app-movie-info [MovieData]='MovieData'></app-movie-info>
+
+    <app-tvshow-player [TvshowData]='MovieData'></app-tvshow-player>
+
+</ng-template>
+
 
 <br>
 <div class="sharethis-inline-reaction-buttons"></div>

@@ -15,6 +15,10 @@ export class ApiService {
     return this.http.get(`${this.HEADERS}${this.APIURL}movies/${Slug}${this.FORMAT}`)
   }
 
+  TvShowData(Slug){
+    return this.http.get(`${this.HEADERS}${this.APIURL}tv-shows/${Slug}${this.FORMAT}`)
+  }
+
   TagsData(){
     return this.http.get(`${this.HEADERS}${this.APIURL}tags.json`);
   }

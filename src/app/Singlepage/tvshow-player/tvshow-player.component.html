@@ -1,0 +1,78 @@
+<!-- this is tv-show player -->
+<section class="movie" [attr.id]="'movieplayer'" *ngIf="TvshowData">
+    <div class="container">
+        <p>
+            if the player is not working give it sometime to load and it will work
+            <br>
+            إذا لم يعمل المسلسل ، يرجي الانتظار قليلا و سوف يعمل
+        </p>
+
+        <div class="servers">
+            <ul *ngIf="TvshowData.seasons">
+
+
+                <ng-template [ngIf]="TvshowData.seasons[0]">
+                    <li [class.active]="season === 1" (click)="UpdateSe(1);">Season 1</li>
+                </ng-template>
+                <ng-template [ngIf]="TvshowData.seasons[1]">
+                    <li [class.active]="season === 2" (click)="UpdateSe(2);">Season 2</li>
+                </ng-template>
+                <ng-template [ngIf]="TvshowData.seasons[2]">
+                    <li [class.active]="season === 3" (click)="UpdateSe(3);">Season 3</li>
+                </ng-template>
+                <ng-template [ngIf]="TvshowData.seasons[3]">
+                    <li [class.active]="season === 4" (click)="UpdateSe(4);">Season 4</li>
+                </ng-template>
+                <ng-template [ngIf]="TvshowData.seasons[4]">
+                    <li [class.active]="season === 5" (click)="UpdateSe(5);">Season 5</li>
+                </ng-template>
+                <ng-template [ngIf]="TvshowData.seasons[5]">
+                    <li [class.active]="season === 6" (click)="UpdateSe(6);">Season 6</li>
+                </ng-template>
+                <ng-template [ngIf]="TvshowData.seasons[6]">
+                    <li [class.active]="season === 7" (click)="UpdateSe(7);">Season 7</li>
+                </ng-template>
+
+            </ul>
+        </div>
+
+        <div id="movie-player">
+            <span [innerHTML]="iframeLink | moviePlayer"></span>
+        </div>
+
+        <div>
+
+            <ul class="episodes">
+    
+                <ng-template [ngIf]="season === 1">
+                    <li *ngFor="let ep of TvshowData.seasons[0].episodes; index as i" [class.active]="episode === i+1"
+                        (click)="UpdateEp(i+1);">Ep {{ i+1 }}</li>
+                </ng-template>
+                <ng-template [ngIf]="season === 2">
+                    <li *ngFor="let ep of TvshowData.seasons[1].episodes; index as i" [class.active]="episode === i+1"
+                        (click)="UpdateEp(i+1);">Ep {{ i+1 }}</li>
+                </ng-template>
+                <ng-template [ngIf]="season === 3">
+                    <li *ngFor="let ep of TvshowData.seasons[2].episodes; index as i" [class.active]="episode === i+1"
+                        (click)="UpdateEp(i+1);">Ep {{ i+1 }}</li>
+                </ng-template>
+                <ng-template [ngIf]="season === 4">
+                    <li *ngFor="let ep of TvshowData.seasons[3].episodes; index as i" [class.active]="episode === i+1"
+                        (click)="UpdateEp(i+1);">Ep {{ i+1 }}</li>
+                </ng-template>
+                <ng-template [ngIf]="season === 5">
+                    <li *ngFor="let ep of TvshowData.seasons[4].episodes; index as i" [class.active]="episode === i+1"
+                        (click)="UpdateEp(i+1);">Ep {{ i+1 }}</li>
+                </ng-template>
+                <ng-template [ngIf]="season === 6">
+                    <li *ngFor="let ep of TvshowData.seasons[5].episodes; index as i" [class.active]="episode === i+1"
+                        (click)="UpdateEp(i+1);">Ep {{ i+1 }}</li>
+                </ng-template>
+    
+            </ul>
+        </div>
+
+        <div style="clear: both;"></div>
+
+    </div>
+</section>

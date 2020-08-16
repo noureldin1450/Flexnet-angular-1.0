@@ -13,20 +13,34 @@ import { SeoService } from '../services/seo.service';
 
 export class SinglepageComponent implements OnInit {
 
-  loading:boolean = true;
+  loading: boolean = true;
   MovieData: any;
   slug: string;
+  type: string;
 
   constructor(private api: ApiService, private route: ActivatedRoute, private seo: SeoService) {
     //the main movie name
     this.slug = this.route.snapshot.params.slug;
 
-    //geting the data from the api with the slug 
-    api.MovieData(this.slug)
-      .subscribe(data => {
-        this.MovieData = data;
-        this.loading = false;
-      })
+    this.type = this.route.snapshot.url[0].path;
+
+    if (this.type === 'movies') {
+      //geting the data from the api with the slug 
+      api.MovieData(this.slug)
+        .subscribe(data => {
+          this.MovieData = data;
+          this.loading = false;
+        })
+    } else {
+      //geting the data from the api with the slug 
+      api.TvShowData(this.slug)
+        .subscribe(data => {
+          this.MovieData = data;
+          this.loading = false;
+        })
+        
+        console.log(this.MovieData)
+    }
   };
 
 
@@ -51,5 +65,5 @@ export class SinglepageComponent implements OnInit {
     this.seo.SEO(this.MovieData.title);
 
   }
-  
+
 }
