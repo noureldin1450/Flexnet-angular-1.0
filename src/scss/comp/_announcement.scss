@@ -2,7 +2,9 @@
 .announcement{
     text-align: center;
     margin-bottom: 2.5rem;
-
+    @include small-laptop{
+        background-color: $main-color;
+    }
     @include tap{
         margin-top: 3rem;
 
@@ -14,12 +16,9 @@
         }
     }
     p{
-        padding: .5rem 1rem;
+        padding: 0px 1rem;
         max-width: 700px;
         margin: 0px auto;
-        @include tap{
-            padding: .5rem 1.5rem;
-        }
     }
     .container{
         background-color: $main-color;

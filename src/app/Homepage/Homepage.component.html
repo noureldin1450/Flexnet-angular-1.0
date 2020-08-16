@@ -8,12 +8,10 @@
 <app-announcements></app-announcements>
 <app-search></app-search>
 
+<app-slider [title]="'New Tv Shows'" [amount]="10" [icon]="'star-red'" [moviesData]="tvshowsData.tvshows"></app-slider>
+
 <app-slider [Link]="'movies'" [title]="'FlexNet Latest Movies'" [start]="2" [amount]="40" [icon]="'film-red'" [moviesData]="latestmovies"></app-slider>
 <app-slider [title]="'FlexNet Top Movies'" [amount]="10" [icon]="'star-red'" [moviesData]="topmovies"></app-slider>
-
-<ng-template *ngFor="let slider of TagsMovies.homepagetags">
-
-</ng-template>
 
 <app-slider [Link]="'/tags/action'" [title]="'Action movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Action"></app-slider>
 <app-slider [Link]="'/tags/Adventure'" [title]="'Adventure movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Adventure"></app-slider>
