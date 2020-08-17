@@ -9,6 +9,7 @@ import { TagpageComponent } from './tagpage/tagpage.component';
 import { MoviespageComponent } from './moviespage/moviespage.component';
 import { CategoriesComponent } from './shared/categories/categories.component';
 import { ReqpageComponent } from './reqpage/reqpage.component';
+import { TvshowpageComponent } from './tvshowpage/tvshowpage.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'top',
@@ -19,6 +20,7 @@ const routerOptions: ExtraOptions = {
 const routes: Routes = [
   { path:'', component: HomepageComponent},
   { path:'tv-shows/:slug', component: SinglepageComponent},
+  { path:'tv-shows', component: TvshowpageComponent},
   { path:'movies/:slug', component: SinglepageComponent},
   { path:'tags/:tag', component: TagpageComponent},
   { path:'movies', component: MoviespageComponent },

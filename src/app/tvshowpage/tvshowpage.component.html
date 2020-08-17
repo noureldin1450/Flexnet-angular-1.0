@@ -1,0 +1,46 @@
+<div class="container">
+    <h2 class="main-title list-page-title">
+        <span class="main-title__text">
+            Latest Tv Shows 
+            <img src="assets/icons/film-red.svg" class="ion-icon" />
+        </span>
+    </h2>
+</div>
+
+
+<app-loading *ngIf="loading"></app-loading>
+
+<main>
+    <section id="movies" class="movies">
+        <ul class="movie-list home-list animated fadeIn">
+            <div class="container">
+                <li *ngFor="let tvshow of TvshowsData.tvshows">
+                    <div class="item">
+                        <div class="poster" [lazyLoad]="tvshow.moviecover" style="
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    ">
+                            <div class="content">
+
+                                <a href="{{ tvshow.slug }}">
+                                    <img class="ion-icon play" src="assets/icons/play-white.svg">
+                                    <div class="rating">
+                                        <div class="rotat">
+                                            <img class="ion-icon" src="assets/icons/star-white.svg">
+                                        </div> {{ tvshow.rating }} <span>/10</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="movie-name">
+                            <h2 class="title"> {{ tvshow.title }} </h2>
+                        </div>
+
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </section>
+</main>

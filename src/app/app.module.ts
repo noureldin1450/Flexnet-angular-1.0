@@ -13,6 +13,7 @@ import { HomepageModule } from './Homepage/Homepage.module';
 import { SinglepageModule } from './Singlepage/Singlepage.module';
 import { TagpageModule } from './tagpage/tagpage.module';
 import { MoviespageModule } from './moviespage/moviespage.module';
+import { TvshowpageModule } from './tvshowpage/tvshowpage.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -37,6 +38,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     SliderModule,
+    TvshowpageModule,
     BrowserModule,
     MoviespageModule,
     AppRoutingModule,

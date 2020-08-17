@@ -33,7 +33,6 @@ export class HomepageComponent implements OnInit {
         this.tvshowsData = data;
       });
 
-    console.log(this.tvshowsData)
   }
 
   ngOnInit() {
