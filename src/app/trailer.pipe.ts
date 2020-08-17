@@ -8,10 +8,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class TrailerPipe implements PipeTransform {
 
   constructor(private Sanitizer:DomSanitizer){}
-
-  transform(value: string):any {
+  
+  transform(value: string, kind:string, year:string):any {
     return this.Sanitizer.bypassSecurityTrustHtml(`
-      <iframe src="${value}" frameborder="0"
+      <iframe src="https://www.youtube.com/embed?listType=search&list=${value}+${kind}+(${year})+trailer" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope        picture-in-picture"
         allowfullscreen>
       </iframe>

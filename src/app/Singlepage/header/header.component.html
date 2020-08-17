@@ -5,7 +5,7 @@
     
             <div class="content container">
     
-                <div class="trailer" [innerHtml]='MovieData.trailer | trailer'></div>
+                <div class="trailer" [innerHtml]='MovieData.title | trailer: MovieData.type : MovieData.year'></div>
     
                 <div class="info">
                     <h1 class="info__title">
