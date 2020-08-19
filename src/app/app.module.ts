@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 //slider
 import { SliderModule } from './shared/slider/slider.module';
@@ -38,6 +39,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     SliderModule,
+    RouterModule,
     TvshowpageModule,
     BrowserModule,
     MoviespageModule,

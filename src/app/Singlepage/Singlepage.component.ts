@@ -18,11 +18,16 @@ export class SinglepageComponent implements OnInit {
   slug: string;
   type: string;
 
+  notfound: boolean = false;
+  ErrorMsg: string;
+
+
   constructor(private api: ApiService, private route: ActivatedRoute, private seo: SeoService) {
     //the main movie name
     this.slug = this.route.snapshot.params.slug;
 
     this.type = this.route.snapshot.url[0].path;
+
 
     if (this.type === 'movies') {
       //geting the data from the api with the slug 
@@ -30,16 +35,39 @@ export class SinglepageComponent implements OnInit {
         .subscribe(data => {
           this.MovieData = data;
           this.loading = false;
-        })
+        },
+          error => {
+            this.notfound = true;
+            this.loading = false;
+            if (this.type === 'movies') {
+              this.type = 'movie'
+            } if (this.type === 'tv-shows') {
+              this.type = 'tv-show'
+            }
+            this.ErrorMsg = `Sorry we dont have ${this.slug} ${this.type}`;
+            console.log(this.notfound);
+          }
+        )
     } else {
       //geting the data from the api with the slug 
       api.TvShowData(this.slug)
         .subscribe(data => {
           this.MovieData = data;
           this.loading = false;
-        })
-        
-        console.log(this.MovieData)
+        },
+          error => {
+            this.notfound = true;
+            this.loading = false;
+            if (this.type === 'movies') {
+              this.type = 'movie'
+            } if (this.type === 'tv-shows') {
+              this.type = 'tv-show'
+            }
+            this.ErrorMsg = `Sorry we dont have ${this.slug} ${this.type}`;
+            console.log(this.notfound);
+          }
+        );
+      console.log(this.MovieData)
     }
   };
 

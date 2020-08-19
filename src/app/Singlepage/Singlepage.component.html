@@ -1,31 +1,44 @@
-
-
-
-
 <app-loading *ngIf="loading"></app-loading>
 
+<ng-template [ngIf]="!notfound" [ngIfElse]="error">
+    <ng-template [ngIf]="MovieData.type === 'movie'" [ngIfElse]="tvshow">
 
-<ng-template [ngIf]="MovieData.type === 'movie'" [ngIfElse]="tvshow">
+        <app-header [MovieData]='MovieData'></app-header>
 
-    <app-header [MovieData]='MovieData'></app-header>
-    
-    <app-movie-info [MovieData]='MovieData'></app-movie-info>
-    
-    <app-movie-player [MovieData]='MovieData'></app-movie-player>
-    
-    <app-downloadmovie [MovieData]="MovieData"></app-downloadmovie>
+        <app-movie-info [MovieData]='MovieData'></app-movie-info>
 
+        <app-movie-player [MovieData]='MovieData'></app-movie-player>
+
+        <app-downloadmovie [MovieData]="MovieData"></app-downloadmovie>
+
+    </ng-template>
+
+    <ng-template #tvshow>
+
+        <app-header [MovieData]='MovieData'></app-header>
+        <app-movie-info [MovieData]='MovieData'></app-movie-info>
+
+        <app-tvshow-player [TvshowData]='MovieData'></app-tvshow-player>
+
+    </ng-template>
+
+    <br>
+    <div class="sharethis-inline-reaction-buttons"></div>
 </ng-template>
 
-<ng-template #tvshow>
 
-    <app-header [MovieData]='MovieData'></app-header>
-    <app-movie-info [MovieData]='MovieData'></app-movie-info>
+<ng-template #error>
+    <app-tags></app-tags>
 
-    <app-tvshow-player [TvshowData]='MovieData'></app-tvshow-player>
-
+    <div class="error">
+        <div class="container">
+            <h1 [innerText]="ErrorMsg"></h1>
+            <p>if you want us to add it go to <a [routerLink]="'/request'">request</a> page and request it and we will add it as <br> fast
+                as we can</p>
+            <div class="btn">
+                <a [routerLink]="'/request'">Request</a>
+                <a [routerLink]="'/'">HomePage</a>
+            </div>
+        </div>
+    </div>
 </ng-template>
-
-
-<br>
-<div class="sharethis-inline-reaction-buttons"></div>

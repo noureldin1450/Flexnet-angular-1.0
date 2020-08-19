@@ -1,0 +1,58 @@
+.error {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-image: url(/assets/images/sadfacebackground.png);
+
+    @include small-laptop{
+        background-image: none;
+    }
+
+    @include small-laptop{
+        h1,
+        p,
+        .btn{
+            text-align: center;
+        }
+    }
+    h1 {
+        font-size: 2.5rem;
+        text-transform: capitalize;
+        color: $black-color;
+        font-weight: 400;
+        @include tap{
+            font-size: 2rem;
+        }
+    }
+    p {
+        color: $black-color;
+        font-weight: 900;
+        font-size: 1rem;
+        text-transform: lowercase;
+        padding-top: 0.5rem;
+
+        a {
+            color: $main-color;
+            text-decoration: underline;
+        }
+    }
+    .btn {
+        margin-top: 2rem;
+
+        a {
+            color: $white-color;
+            background: $black-color;
+            padding: .5rem 2.5rem;
+            border-radius: 3px;
+            
+            &:first-of-type {
+                background: $main-color;
+                margin-right: .5rem;
+            }
+        }
+    }
+}
