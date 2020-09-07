@@ -5,19 +5,16 @@ import { Title, Meta } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class SeoService {
-  constructor(private Seotitle:Title, private Seometa:Meta) {}
 
   title:string = 'Flexnet - watch free cinema movies online. flexnet free new movies online';
   dis:string = 'Flexnet - Free online new movies. watch free flexnet cinema movies online watch and download movies';
   keywords:string = 'flexnet movies,movies flex.net,flexnet free movies,flexnet movie,movie flex.net,films,watch movies,flexnet,flexnet.ga,موقع افلام عربية حديثة اون لاين ,موقع افلام بدون تحميل,مواقع افلام مترجمة اون لاين,افضل مواقع افلام الاكشن,احسن موقع افلام,افضل مواقع لمشاهدة الافلام اون لاين افضل,موقع للأفلام,احدث مواقع الافلام,new movies,flexnet,movies to watch,movies to watch with friends,free movies cinema,free movies cinema cinema movies stream,watch free cinema movies streaming';
 
-
   SEO(title?:string, description?:string, poster?:string){
     this.addtitle(title);
     this.addingdis(description, poster);
   }
-
-
+  
   addtitle(title?:string){
     return(
       this.Seotitle.setTitle((title + " Watch Now For Free - Flexnet") || this.title ),
@@ -45,5 +42,7 @@ export class SeoService {
       { charset: 'UTF-8' }
     ]); 
   }
+
+  constructor(private Seotitle:Title, private Seometa:Meta) {}
 
 }

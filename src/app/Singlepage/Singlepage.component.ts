@@ -21,21 +21,28 @@ export class SinglepageComponent implements OnInit {
   notfound: boolean = false;
   ErrorMsg: string;
 
-
-  constructor(private api: ApiService, private route: ActivatedRoute, private seo: SeoService) {
-    //the main movie name
+  datatype() {
+    //the movie/tv-show name
     this.slug = this.route.snapshot.params.slug;
-
+    //the movie/tv-show name type movie or tv-show
     this.type = this.route.snapshot.url[0].path;
+  }
 
+
+  //this fun for switching from the movie endpoint to tv-show endpoing and vis versa 
+  dataassign() {
 
     if (this.type === 'movies') {
       //geting the data from the api with the slug 
-      api.MovieData(this.slug)
+      this.api.MovieData(this.slug)
         .subscribe(data => {
+          console.log('data has been added....')
           this.MovieData = data;
           this.loading = false;
+          console.log('adding the metadata....')
+          this.metadata(this.MovieData.title, this.MovieData.story, this.MovieData.moviecover);
         },
+
           error => {
             this.notfound = true;
             this.loading = false;
@@ -49,12 +56,16 @@ export class SinglepageComponent implements OnInit {
           }
         )
     } else {
-      //geting the data from the api with the slug 
-      api.TvShowData(this.slug)
+
+      this.api.TvShowData(this.slug)
         .subscribe(data => {
+          console.log('data has been added....')
           this.MovieData = data;
           this.loading = false;
+          console.log('adding the metadata....')
+          this.metadata(this.MovieData.title, this.MovieData.story, this.MovieData.moviecover);
         },
+
           error => {
             this.notfound = true;
             this.loading = false;
@@ -69,11 +80,26 @@ export class SinglepageComponent implements OnInit {
         );
       console.log(this.MovieData)
     }
+
+  }
+
+  metadata(title: string, dis: string, poster: string) {
+    //SEO
+    this.seo.SEO(title, dis, poster);
+  }
+
+  constructor(private api: ApiService, private route: ActivatedRoute, private seo: SeoService) {
+    //geting the data type and info from the url
+    this.datatype();
+
+    //geting the data from the api endpoint
+    this.dataassign();
+
+
   };
 
-
+  //for the emojes script injection
   loadAPI: Promise<any>;
-
   Url: string = 'https://platform-api.sharethis.com/js/sharethis.js#property=5ed86f8ee9c615001202775d&product=inline-share-buttons';
 
   ngOnInit() {
@@ -88,10 +114,6 @@ export class SinglepageComponent implements OnInit {
       node.charset = 'utf-8';
       document.getElementsByTagName('head')[0].appendChild(node);
     });
-
-    //SEO
-    this.seo.SEO(this.MovieData.title);
-
   }
 
 }
