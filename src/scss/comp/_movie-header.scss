@@ -118,6 +118,10 @@
                     }
                     &:nth-child(1) {
                         padding: .5rem 2rem;     
+
+                        .ion-icon{
+                            fill: $main-color;
+                        }
                     }
 
                     @include laptop {

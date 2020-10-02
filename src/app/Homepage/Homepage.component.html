@@ -8,22 +8,23 @@
 <app-announcements></app-announcements>
 <app-search></app-search>
 
-<app-slider [title]="'New Tv Shows'" [amount]="10" [icon]="'star-red'" [moviesData]="tvshowsData.tvshows"></app-slider>
+<app-slider [title]="'New Tv Shows'" [amount]="10" [icon]="'star'" [moviesData]="tvshowsData.tvshows"></app-slider>
 
-<app-slider [Link]="'movies'" [title]="'FlexNet Latest Movies'" [start]="2" [amount]="40" [icon]="'film-red'" [moviesData]="latestmovies"></app-slider>
-<app-slider [title]="'FlexNet Top Movies'" [amount]="10" [icon]="'star-red'" [moviesData]="topmovies"></app-slider>
+<app-slider [Link]="'movies'" [title]="'FlexNet Latest Movies'" [start]="2" [amount]="40" [icon]="'film'" [moviesData]="latestmovies"></app-slider>
 
-<app-slider [Link]="'/tags/action'" [title]="'Action movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Action"></app-slider>
-<app-slider [Link]="'/tags/Adventure'" [title]="'Adventure movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Adventure"></app-slider>
-<app-slider [Link]="'/tags/Animation'" [title]="'Animation movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Animation"></app-slider>
-<app-slider [Link]="'/tags/Comedy'" [title]="'Comedy movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Comedy"></app-slider>
-<app-slider [Link]="'/tags/Crime'" [title]="'Crime movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Crime"></app-slider>
-<app-slider [Link]="'/tags/Drama'" [title]="'Drama movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Drama"></app-slider>
-<app-slider [Link]="'/tags/Horror'" [title]="'Horror movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Horror"></app-slider>
-<app-slider [Link]="'/tags/Family'" [title]="'Family movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Family"></app-slider>
-<app-slider [Link]="'/tags/Mystery'" [title]="'Mystery movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Mystery"></app-slider>
-<app-slider [Link]="'/tags/Romance'" [title]="'Romance movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Romance"></app-slider>
-<app-slider [Link]="'/tags/Thriller'" [title]="'Thriller movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.Thriller"></app-slider>
-<app-slider [Link]="'/tags/War'" [title]="'War movies'" [amount]="10" [icon]="'star-red'" [moviesData]="TagsMovies.homepagetags.War"></app-slider>
+<app-slider [title]="'FlexNet Top Movies'" [amount]="10" [icon]="'star'" [moviesData]="topmovies"></app-slider>
+
+<app-slider [Link]="'/tags/action'" [title]="'Action movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Action"></app-slider>
+<app-slider [Link]="'/tags/Adventure'" [title]="'Adventure movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Adventure"></app-slider>
+<app-slider [Link]="'/tags/Animation'" [title]="'Animation movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Animation"></app-slider>
+<app-slider [Link]="'/tags/Comedy'" [title]="'Comedy movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Comedy"></app-slider>
+<app-slider [Link]="'/tags/Crime'" [title]="'Crime movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Crime"></app-slider>
+<app-slider [Link]="'/tags/Drama'" [title]="'Drama movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Drama"></app-slider>
+<app-slider [Link]="'/tags/Horror'" [title]="'Horror movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Horror"></app-slider>
+<app-slider [Link]="'/tags/Family'" [title]="'Family movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Family"></app-slider>
+<app-slider [Link]="'/tags/Mystery'" [title]="'Mystery movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Mystery"></app-slider>
+<app-slider [Link]="'/tags/Romance'" [title]="'Romance movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Romance"></app-slider>
+<app-slider [Link]="'/tags/Thriller'" [title]="'Thriller movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.Thriller"></app-slider>
+<app-slider [Link]="'/tags/War'" [title]="'War movies'" [amount]="10" [moviesData]="TagsMovies.homepagetags.War"></app-slider>
 
 <app-categories *ngIf="latestmovies"></app-categories>

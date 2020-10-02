@@ -3,12 +3,9 @@
 
         <div class="content">
             <div class="live-stream">
-                <h1 class="main-title">FlexNet New Movies 
-                    <!-- <img src="https://unpkg.com/ionicons@5.1.2/dist/svg/flame.svg" class="ion-icon"> -->
-                </h1>
+                <h1 class="main-title">FlexNet New Movies</h1>
 
                 <ul>
-
                     <li *ngFor="let movie of moviesData.slice(0,2);">
                         <div class="player" style="
                             background-image: url({{movie.moviebg}});
@@ -21,7 +18,9 @@
 
                                     <a title="Watch {{ movie.title }} on flexnet now" [routerLink]="movie.slug">
                                         <div class="play-btn">
-                                            <img class="ion-icon" src="/assets/icons/play-white.svg" />
+                                            <svg class="ion-icon">
+                                                <use href="/assets/icons.svg#icon-play"></use>
+                                            </svg>
                                         </div>
                                     </a>
 
@@ -31,13 +30,15 @@
                                         <div class="more-info">
                                             <ul>
                                                 <li class="star">
-                                                    <!-- <ion-icon class="animated rotat" name="star"></ion-icon> -->
-                                                    <img class="ion-icon animated rotat" src="/assets/icons/star-gold.svg" />
+                                                    <svg class="ion-icon animated rotat">
+                                                        <use href="./assets/icons.svg#icon-star"></use>
+                                                    </svg>
                                                     <span>{{ movie.rating }}</span>
                                                 </li>
                                                 <li>
-                                                    <!-- <ion-icon name="time"></ion-icon> -->
-                                                    <img class="ion-icon" src="/assets/icons/time.svg" />
+                                                    <svg class="ion-icon">
+                                                        <use href="/assets/icons.svg#icon-time"></use>
+                                                    </svg>
                                                     <span>{{ movie.duration }}</span>
                                                 </li>
                                             </ul>
@@ -51,17 +52,14 @@
 
                         <div class="btn">
                             <a [routerLink]="movie.slug" title="Watch {{ movie.title }} Movie Now">Watch It Now
-                            <img class="ion-icon" src="../../../assets/icons/videocam-white.svg">                                
-                                 <!-- <ion-icon name="videocam"></ion-icon> -->
+                                <svg class="ion-icon">
+                                    <use href="/assets/icons.svg#icon-cam"></use>
+                                </svg>
                             </a>
                         </div>
 
                     </li>
-
-
                 </ul>
-
-
 
             </div>
         </div>
@@ -72,4 +70,3 @@
 <ng-template #loading>
     <app-loading></app-loading>
 </ng-template>
-

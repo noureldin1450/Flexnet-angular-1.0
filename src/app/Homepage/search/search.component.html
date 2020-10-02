@@ -4,8 +4,9 @@
     <input [(ngModel)]="moviename" list="movies-names" id="moviename" name="search" type="text" placeholder="Movie Name" onkeydown="keyCode(event)" required>
     
     <button (click)="search()">
-        <img class="ion-icon" src="../../../assets/icons/search-white.svg">
-        <!-- <ion-icon name="search"></ion-icon> -->
+        <svg class="ion-icon">
+            <use href="/assets/icons.svg#icon-search"></use>
+        </svg>
     </button>
 
     <datalist id="movies-names">

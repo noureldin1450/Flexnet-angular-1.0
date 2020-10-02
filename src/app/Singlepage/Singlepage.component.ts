@@ -29,7 +29,7 @@ export class SinglepageComponent implements OnInit {
   }
 
 
-  //this fun for switching from the movie endpoint to tv-show endpoing and vis versa 
+  //this function for switching from the movie endpoint to tv-show endpoing and vis versa 
   dataassign() {
 
     if (this.type === 'movies') {

@@ -17,6 +17,21 @@
     margin: auto;
 }
 
+//the default of all icons color
+.ion-icon {
+    width: 25px !important;
+    height: 20px;
+    fill: $white-color;
+
+    img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+
 .related {
     .movies {
         padding: 0px !important;
@@ -56,7 +71,8 @@
         .ion-icon {
             padding-left: 0.5rem;
             width: 30px;
-            
+            fill: $main-color;
+
             @include super-small-mobile{
                 display: none;
             }
@@ -91,18 +107,6 @@
         }
     }
 
-}
-
-//the default of all icons color
-.ion-icon {
-    width: 25px !important;
-
-    img{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
 }
 
 //adding some speaces for the card shadow

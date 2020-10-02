@@ -26,6 +26,7 @@ header {
     .ion-icon {
       padding-left: 0.5rem !important;
       filter: invert(0.5) sepia(1) saturate(5) hue-rotate(-36deg);
+      fill: $white-color;
       width: 30px !important;
     }
 
@@ -133,9 +134,16 @@ header {
           .play-btn {
             text-align: center;
             padding-bottom: 1rem;
+
             .ion-icon {
               width: 60px !important;
-            }
+              fill: white;
+              height: 60px;
+
+              @include mobile {
+                width: 40px !important;
+              }
+            } //the inner play btn
           }
 
           .info {
@@ -150,13 +158,6 @@ header {
               padding-bottom: 2.5rem;
 
               ul {
-                .star {
-                  color: #ffc93c;
-                  .ion-icon {
-                    width: 21px !important;
-                    margin-right: 0.4rem;
-                  }
-                }
                 li {
                   display: inline-block;
                   color: $white-color;
@@ -177,13 +178,22 @@ header {
                   @include largtap {
                     margin-right: 1rem;
                   }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+                }//the end of the list of icons
+                .star {
+                  color: #ffc93c;
+
+                  .ion-icon {
+                    width: 21px !important;
+                    margin-right: 0.4rem;
+                    fill: #ffc93c;
+                  }//the star svg icon
+                } //the star icon
+              }//the main ul that contain everything
+            } //movie more info
+          } //movie info
+        }//the container that wrap all the elements
+      }//the end of the overlay
+    }//the end of the player div
   }
 }
 /* end header code */
