@@ -29,7 +29,7 @@ export class MoviePlayerComponent implements OnChanges {
       console.log('data has loaded');
 
       let fushaarid = this.MovieData.fushaarid;
-      let fushaarapi = 'https://bg.stream.fushaar.com/media/';
+      let fushaarapi = 'https://bg.stream.fushaar.com/movie/';
       let googleapi = 'https://storage.googleapis.com/neon-reporter-274200.appspot.com/fushaar/media/';
       let ext = '.mp4';
 
